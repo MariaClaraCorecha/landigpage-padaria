@@ -1,10 +1,23 @@
 .product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   text-align: left;
 }
 
 .product-card img[mat-card-image] {
   height: 180px;
   object-fit: cover;
+}
+
+mat-card-title {
+  color: var(--color-chocolate);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .tagline {
@@ -19,7 +32,7 @@
 }
 
 .details {
-  margin: 0;
+  margin: auto 0 0;
   display: flex;
   flex-direction: column;
   gap: 4px;
