@@ -5,7 +5,20 @@
   <div class="subsection">
     <h3><mat-icon>cake</mat-icon> Bolos</h3>
     <div class="photo-gallery">
-      <p class="placeholder">Fotos dos bolos em breve.</p>
+      @for (cake of cakes; track cake.name) {
+        <mat-card class="cake-card">
+          <img mat-card-image [src]="cake.photo" [alt]="cake.name" />
+          <mat-card-header>
+            <mat-card-title>{{ cake.name }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="description">{{ cake.description }}</p>
+            <p><strong>Bolo inteiro:</strong> {{ cake.priceWhole }}</p>
+            <p><strong>Fatia:</strong> {{ cake.priceSlice }}</p>
+            <p><strong>Ingredientes principais:</strong> {{ cake.ingredients }}</p>
+          </mat-card-content>
+        </mat-card>
+      }
     </div>
   </div>
 </section>
