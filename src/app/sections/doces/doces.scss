@@ -22,3 +22,17 @@
 .placeholder {
   font-style: italic;
 }
+
+.cake-card {
+  width: 280px;
+  text-align: left;
+}
+
+.cake-card img[mat-card-image] {
+  height: 180px;
+  object-fit: cover;
+}
+
+.description {
+  font-style: italic;
+}
