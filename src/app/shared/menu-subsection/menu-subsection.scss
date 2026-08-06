@@ -1,0 +1,19 @@
+.subsection {
+  margin-top: 32px;
+}
+
+.subsection h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-chocolate);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+  text-align: left;
+}

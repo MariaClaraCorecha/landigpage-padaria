@@ -1,0 +1,24 @@
+<mat-card class="product-card">
+  <img mat-card-image [src]="item().photo" [alt]="item().name" />
+  <mat-card-header>
+    <mat-card-title>{{ item().name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p class="tagline">{{ item().tagline }}</p>
+    <p class="description">{{ item().description }}</p>
+    <dl class="details">
+      <div>
+        <dt>Inteiro</dt>
+        <dd>{{ item().priceWhole }}</dd>
+      </div>
+      <div>
+        <dt>Fatia</dt>
+        <dd>{{ item().priceSlice }}</dd>
+      </div>
+      <div>
+        <dt>Ingredientes principais</dt>
+        <dd>{{ item().ingredients }}</dd>
+      </div>
+    </dl>
+  </mat-card-content>
+</mat-card>

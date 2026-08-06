@@ -1,25 +1,16 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
-
-interface Cake {
-  name: string;
-  photo: string;
-  tagline: string;
-  description: string;
-  priceWhole: string;
-  priceSlice: string;
-  ingredients: string;
-}
+import { MenuSubsection } from '../../shared/menu-subsection/menu-subsection';
+import { MenuItem } from '../../shared/menu-item';
 
 @Component({
   selector: 'app-doces',
-  imports: [MatIconModule, MatCardModule],
+  imports: [MatIconModule, MenuSubsection],
   templateUrl: './doces.html',
   styleUrl: './doces.scss',
 })
 export class Doces {
-  protected readonly cakes: Cake[] = [
+  protected readonly cakes: MenuItem[] = [
     {
       name: 'Bolo de Chocolate',
       photo: 'images/doces/bolos/bolo_chocolate.jpg',
