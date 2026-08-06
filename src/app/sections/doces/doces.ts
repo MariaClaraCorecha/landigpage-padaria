@@ -44,9 +44,9 @@ export class Doces {
     {
       name: 'Bolo de Laranja',
       photo: 'images/doces/bolos/bolo_laranja.jpg',
-      tagline: 'Suave e cítrico',
+      tagline: 'Charmoso e caramelizado',
       description:
-        'Massa fofa com sabor natural de laranja e calda cítrica — leve, perfumado e perfeito para qualquer hora do dia.',
+        'Massa macia e úmida coberta por rodelas de laranja caramelizadas, com um brilho dourado de dar água na boca — tão bonito quanto gostoso.',
       priceWhole: 'R$ 00,00',
       priceSlice: 'R$ 0,00',
       ingredients: 'Principais ingredientes aqui',
