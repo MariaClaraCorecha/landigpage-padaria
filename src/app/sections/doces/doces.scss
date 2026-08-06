@@ -1,1 +1,24 @@
 @use '../shared';
+
+.subsection {
+  margin-top: 24px;
+}
+
+.subsection h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-chocolate);
+}
+
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.placeholder {
+  font-style: italic;
+}
