@@ -63,9 +63,9 @@ export class Doces {
       name: 'Bolo de Morango',
       photo: 'images/doces/bolos/bolo_morango.jpg',
       description: 'Descrição breve do bolo.',
-      priceWhole: 'R$ 00,00',
-      priceSlice: 'R$ 0,00',
-      ingredients: 'Principais ingredientes aqui',
+      priceWhole: 'R$ 250,00 (médio)',
+      priceSlice: 'R$ 10,00',
+      ingredients: 'Morango',
     },
     {
       name: 'Bolo Red Velvet',
