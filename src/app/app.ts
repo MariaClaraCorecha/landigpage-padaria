@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Header } from './layout/header/header';
-import { Nav } from './layout/nav/nav';
 import { Footer } from './layout/footer/footer';
 import { Doces } from './sections/doces/doces';
 import { Salgados } from './sections/salgados/salgados';
@@ -9,7 +8,7 @@ import { Cafes } from './sections/cafes/cafes';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Nav, Footer, Doces, Salgados, Folheados, Cafes],
+  imports: [Header, Footer, Doces, Salgados, Folheados, Cafes],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

@@ -1,4 +1,9 @@
 <mat-toolbar class="header">
-  <mat-icon>cake</mat-icon>
-  <span class="brand">{{ title }}</span>
+  <mat-toolbar-row class="brand-row">
+    <mat-icon>cake</mat-icon>
+    <span class="brand">{{ title }}</span>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="nav-row">
+    <app-nav />
+  </mat-toolbar-row>
 </mat-toolbar>

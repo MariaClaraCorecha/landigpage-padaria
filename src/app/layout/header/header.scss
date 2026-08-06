@@ -1,6 +1,17 @@
 .header {
+  height: auto;
   background-color: var(--color-chocolate);
   color: var(--color-pink-text-light);
+}
+
+.brand-row {
+  height: auto;
+  padding: 12px 16px;
+}
+
+.nav-row {
+  height: auto;
+  padding: 0 16px 8px;
 }
 
 .brand {
