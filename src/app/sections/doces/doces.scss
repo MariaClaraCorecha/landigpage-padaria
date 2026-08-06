@@ -33,6 +33,29 @@
   object-fit: cover;
 }
 
+.tagline {
+  margin: 0 0 4px;
+  font-weight: 600;
+  color: var(--color-chocolate);
+}
+
 .description {
-  font-style: italic;
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.details {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.details dt {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.details dd {
+  margin: 0 0 4px;
 }

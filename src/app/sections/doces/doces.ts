@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 interface Cake {
   name: string;
   photo: string;
+  tagline: string;
   description: string;
   priceWhole: string;
   priceSlice: string;
@@ -22,7 +23,9 @@ export class Doces {
     {
       name: 'Bolo de Chocolate',
       photo: 'images/doces/bolos/bolo_chocolate.jpg',
-      description: 'Descrição breve do bolo.',
+      tagline: 'Intenso e irresistível',
+      description:
+        'Camadas macias de chocolate com recheio cremoso e cobertura brilhante — um clássico que conquista à primeira mordida.',
       priceWhole: 'R$ 00,00',
       priceSlice: 'R$ 0,00',
       ingredients: 'Principais ingredientes aqui',
@@ -30,7 +33,9 @@ export class Doces {
     {
       name: 'Bolo de Cenoura com Chocolate',
       photo: 'images/doces/bolos/bolo_cenourachocolate.jpg',
-      description: 'Descrição breve do bolo.',
+      tagline: 'O combo perfeito',
+      description:
+        'Massa fofinha de cenoura com uma generosa cobertura de chocolate cremoso. Simples, afetivo e sempre gostoso.',
       priceWhole: 'R$ 00,00',
       priceSlice: 'R$ 0,00',
       ingredients: 'Principais ingredientes aqui',
@@ -38,7 +43,9 @@ export class Doces {
     {
       name: 'Bolo de Coco',
       photo: 'images/doces/bolos/bolo_coco.jpg',
-      description: 'Descrição breve do bolo.',
+      tagline: 'Refrescante e aconchegante',
+      description:
+        'Massa leve com coco fresco e um toque de leite condensado, para quem ama um doce suave e cheiroso.',
       priceWhole: 'R$ 00,00',
       priceSlice: 'R$ 0,00',
       ingredients: 'Principais ingredientes aqui',
@@ -46,7 +53,9 @@ export class Doces {
     {
       name: 'Bolo de Laranja',
       photo: 'images/doces/bolos/bolo_laranja.jpg',
-      description: 'Descrição breve do bolo.',
+      tagline: 'Suave e cítrico',
+      description:
+        'Massa fofa com sabor natural de laranja e calda cítrica — leve, perfumado e perfeito para qualquer hora do dia.',
       priceWhole: 'R$ 00,00',
       priceSlice: 'R$ 0,00',
       ingredients: 'Principais ingredientes aqui',
@@ -54,7 +63,9 @@ export class Doces {
     {
       name: 'Bolo Mármore',
       photo: 'images/doces/bolos/bolo_marmore.jpg',
-      description: 'Descrição breve do bolo.',
+      tagline: 'O melhor dos dois mundos',
+      description:
+        'Massas de baunilha e chocolate mescladas em cada fatia — ideal para quem não sabe escolher só um sabor.',
       priceWhole: 'R$ 00,00',
       priceSlice: 'R$ 0,00',
       ingredients: 'Principais ingredientes aqui',
@@ -62,7 +73,9 @@ export class Doces {
     {
       name: 'Bolo de Morango',
       photo: 'images/doces/bolos/bolo_morango.jpg',
-      description: 'Descrição breve do bolo.',
+      tagline: 'Fresquinho e delicado',
+      description:
+        'Massa macia com morangos frescos e um toque adocicado — leve, colorido e cheio de sabor em cada fatia.',
       priceWhole: 'R$ 250,00 (médio)',
       priceSlice: 'R$ 10,00',
       ingredients: 'Morango',
@@ -70,7 +83,9 @@ export class Doces {
     {
       name: 'Bolo Red Velvet',
       photo: 'images/doces/bolos/bolo_redvelvet.jpg',
-      description: 'Descrição breve do bolo.',
+      tagline: 'Elegante e aveludado',
+      description:
+        'Massa aveludada com um toque de cacau e cobertura de cream cheese — sofisticado, macio e surpreendente.',
       priceWhole: 'R$ 00,00',
       priceSlice: 'R$ 0,00',
       ingredients: 'Principais ingredientes aqui',
