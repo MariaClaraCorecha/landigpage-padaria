@@ -2,35 +2,5 @@
   <h2><mat-icon>icecream</mat-icon> Doces</h2>
   <p>Em breve, nossos doces por aqui.</p>
 
-  <div class="subsection">
-    <h3><mat-icon>cake</mat-icon> Bolos</h3>
-    <div class="photo-gallery">
-      @for (cake of cakes; track cake.name) {
-        <mat-card class="cake-card">
-          <img mat-card-image [src]="cake.photo" [alt]="cake.name" />
-          <mat-card-header>
-            <mat-card-title>{{ cake.name }}</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <p class="tagline">{{ cake.tagline }}</p>
-            <p class="description">{{ cake.description }}</p>
-            <dl class="details">
-              <div>
-                <dt>Bolo inteiro</dt>
-                <dd>{{ cake.priceWhole }}</dd>
-              </div>
-              <div>
-                <dt>Fatia</dt>
-                <dd>{{ cake.priceSlice }}</dd>
-              </div>
-              <div>
-                <dt>Ingredientes principais</dt>
-                <dd>{{ cake.ingredients }}</dd>
-              </div>
-            </dl>
-          </mat-card-content>
-        </mat-card>
-      }
-    </div>
-  </div>
+  <app-menu-subsection icon="cake" title="Bolos" [items]="cakes" />
 </section>
