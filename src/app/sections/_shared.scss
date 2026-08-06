@@ -1,0 +1,14 @@
+.menu-section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.menu-section h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-chocolate);
+}

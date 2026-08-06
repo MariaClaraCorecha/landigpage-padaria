@@ -1,0 +1,8 @@
+<nav class="nav">
+  @for (link of links; track link.href) {
+    <a class="nav-link" [href]="link.href">
+      <mat-icon>{{ link.icon }}</mat-icon>
+      <span>{{ link.label }}</span>
+    </a>
+  }
+</nav>

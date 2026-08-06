@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
+import { Header } from './layout/header/header';
+import { Nav } from './layout/nav/nav';
+import { Footer } from './layout/footer/footer';
+import { Doces } from './sections/doces/doces';
+import { Salgados } from './sections/salgados/salgados';
+import { Folheados } from './sections/folheados/folheados';
+import { Cafes } from './sections/cafes/cafes';
 
 @Component({
   selector: 'app-root',
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatCardModule],
+  imports: [Header, Nav, Footer, Doces, Salgados, Folheados, Cafes],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {
-  protected readonly title = 'Padaria';
-}
+export class App {}

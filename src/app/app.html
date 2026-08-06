@@ -1,19 +1,11 @@
-<mat-toolbar color="primary">
-  <mat-icon>cake</mat-icon>
-  <span class="brand">{{ title }}</span>
-</mat-toolbar>
+<app-header />
 
-<main class="hero">
-  <mat-card class="hero-card">
-    <mat-card-header>
-      <mat-card-title>Bem-vindo(a)!</mat-card-title>
-      <mat-card-subtitle>Angular + Angular Material configurados com sucesso</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>Este é o ponto de partida do projeto. A partir daqui é só construir a landing page da padaria.</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-flat-button color="primary">Começar</button>
-    </mat-card-actions>
-  </mat-card>
+<main>
+  <app-nav />
+  <app-doces />
+  <app-salgados />
+  <app-folheados />
+  <app-cafes />
 </main>
+
+<app-footer />
