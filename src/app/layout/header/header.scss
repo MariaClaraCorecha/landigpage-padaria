@@ -1,20 +1,36 @@
 .header {
   height: auto;
   background-color: var(--color-chocolate);
-  color: var(--color-pink-text-light);
+  color: var(--color-gold-light);
 }
 
 .brand-row {
   height: auto;
-  padding: 12px 16px;
+  padding: 8px 16px;
+  gap: 4px;
+}
+
+.brand-row mat-icon {
+  color: var(--color-gold);
+  font-size: 22px;
+  width: 22px;
+  height: 22px;
+}
+
+.brand {
+  margin-left: 6px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.cart-button {
+  margin-left: auto;
+  color: var(--color-gold-light);
 }
 
 .nav-row {
   height: auto;
-  padding: 0 16px 8px;
-}
-
-.brand {
-  margin-left: 8px;
-  font-weight: 500;
+  padding: 0 16px 6px;
 }

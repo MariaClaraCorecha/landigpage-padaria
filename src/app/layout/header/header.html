@@ -2,6 +2,17 @@
   <mat-toolbar-row class="brand-row">
     <mat-icon>cake</mat-icon>
     <span class="brand">{{ title }}</span>
+    <button
+      mat-icon-button
+      class="cart-button"
+      routerLink="/perfil"
+      aria-label="Ver minha cestinha"
+      [matBadge]="cart.itemCount()"
+      [matBadgeHidden]="cart.itemCount() === 0"
+      matBadgeColor="accent"
+    >
+      <mat-icon>shopping_basket</mat-icon>
+    </button>
   </mat-toolbar-row>
   <mat-toolbar-row class="nav-row">
     <app-nav />
