@@ -29,7 +29,8 @@ export class Cart {
   );
 
   unitPrice(line: CartLine): number {
-    return parseBrlPrice(line.priceType === 'whole' ? line.item.priceWhole : line.item.priceSlice);
+    const price = line.priceType === 'whole' ? line.item.priceWhole : line.item.priceSlice;
+    return parseBrlPrice(price ?? line.item.priceWhole);
   }
 
   add(item: MenuItem, priceType: PriceType): void {
