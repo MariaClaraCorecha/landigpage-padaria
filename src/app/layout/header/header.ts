@@ -9,7 +9,9 @@ import { Cart } from '../../shared/cart';
 
 @Component({
   selector: 'app-header',
-  imports: [MatToolbarModule, MatIconModule, MatBadgeModule, MatButtonModule, RouterLink, Nav],
+  imports: [MatToolbarModule,
+     MatIconModule, MatBadgeModule,
+     MatButtonModule, RouterLink, Nav],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
