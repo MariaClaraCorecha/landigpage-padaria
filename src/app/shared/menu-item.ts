@@ -4,6 +4,8 @@ export interface MenuItem {
   tagline: string;
   description: string;
   priceWhole: string;
+  priceWholeLabel?: string;
   priceSlice: string;
+  priceSliceLabel?: string;
   ingredients: string;
 }
