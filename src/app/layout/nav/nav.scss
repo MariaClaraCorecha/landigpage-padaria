@@ -2,22 +2,29 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .nav-link {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  border-radius: 20px;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 16px;
   text-decoration: none;
-  color: var(--color-pink-text-light);
-  border: 1px solid var(--color-pink-text-light);
+  font-size: 0.85rem;
+  color: var(--color-gold-light);
+  border: 1px solid var(--color-gold);
   transition: background-color 0.2s ease, color 0.2s ease;
 
+  mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+
   &:hover {
-    background-color: var(--color-pink-text-light);
+    background-color: var(--color-gold);
     color: var(--color-chocolate);
   }
 }
