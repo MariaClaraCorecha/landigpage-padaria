@@ -67,7 +67,7 @@ export const bolos: MenuItem[] = [
     tagline: 'Elegante e aveludado',
     description:
       'Massa aveludada com um toque de cacau e cobertura de cream cheese — sofisticado, macio e surpreendente.',
-    priceWhole: 'R$ 1.200,00',
+    priceWhole: 'R$ 12,00',
     priceSlice: 'R$ 200,00',
     ingredients: 'Cacau, cream cheese e chocolate branco',
   },
