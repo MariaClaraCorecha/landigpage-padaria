@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MenuSubsection } from '../../shared/menu-subsection/menu-subsection';
 import { bolos } from './bolos';
+import { docinhos } from './docinhos';
 
 @Component({
   selector: 'app-doces',
@@ -11,4 +12,5 @@ import { bolos } from './bolos';
 })
 export class Doces {
   protected readonly bolos = bolos;
+  protected readonly docinhos = docinhos;
 }
