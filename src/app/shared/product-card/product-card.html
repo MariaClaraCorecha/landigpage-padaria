@@ -11,10 +11,12 @@
         <dt>{{ wholeLabel() }}</dt>
         <dd>{{ item().priceWhole }}</dd>
       </div>
-      <div>
-        <dt>{{ sliceLabel() }}</dt>
-        <dd>{{ item().priceSlice }}</dd>
-      </div>
+      @if (item().priceSlice) {
+        <div>
+          <dt>{{ sliceLabel() }}</dt>
+          <dd>{{ item().priceSlice }}</dd>
+        </div>
+      }
       <div>
         <dt>Ingredientes principais</dt>
         <dd>{{ item().ingredients }}</dd>
@@ -26,9 +28,11 @@
       <mat-icon>add</mat-icon>
       {{ wholeLabel() }}
     </button>
-    <button mat-stroked-button (click)="addToCart('slice')">
-      <mat-icon>add</mat-icon>
-      {{ sliceLabel() }}
-    </button>
+    @if (item().priceSlice) {
+      <button mat-stroked-button (click)="addToCart('slice')">
+        <mat-icon>add</mat-icon>
+        {{ sliceLabel() }}
+      </button>
+    }
   </mat-card-actions>
 </mat-card>
