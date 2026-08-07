@@ -5,7 +5,7 @@ export interface MenuItem {
   description: string;
   priceWhole: string;
   priceWholeLabel?: string;
-  priceSlice: string;
+  priceSlice?: string;
   priceSliceLabel?: string;
   ingredients: string;
 }
