@@ -46,3 +46,9 @@ mat-card-title {
 .details dd {
   margin: 0 0 4px;
 }
+
+.actions {
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px 16px;
+}

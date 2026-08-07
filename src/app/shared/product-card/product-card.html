@@ -8,11 +8,11 @@
     <p class="description">{{ item().description }}</p>
     <dl class="details">
       <div>
-        <dt>Inteiro</dt>
+        <dt>{{ wholeLabel() }}</dt>
         <dd>{{ item().priceWhole }}</dd>
       </div>
       <div>
-        <dt>Fatia</dt>
+        <dt>{{ sliceLabel() }}</dt>
         <dd>{{ item().priceSlice }}</dd>
       </div>
       <div>
@@ -21,4 +21,14 @@
       </div>
     </dl>
   </mat-card-content>
+  <mat-card-actions class="actions">
+    <button mat-stroked-button (click)="addToCart('whole')">
+      <mat-icon>add</mat-icon>
+      {{ wholeLabel() }}
+    </button>
+    <button mat-stroked-button (click)="addToCart('slice')">
+      <mat-icon>add</mat-icon>
+      {{ sliceLabel() }}
+    </button>
+  </mat-card-actions>
 </mat-card>
