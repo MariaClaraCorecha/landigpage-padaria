@@ -38,16 +38,16 @@ export const docinhos: MenuItem[] = [
     ingredients: 'Amendoim e leite condensado',
   },
   {
-    name: 'Brigadeiro de Ninho',
+    name: 'Brigadeiro de Ninho com Nutella',
     photo: 'images/doces/docinhos/brigadeiro_ninho.jpg',
     tagline: 'Cremoso e aveludado',
     description:
-      'Brigadeiro cremoso de leite em pó Ninho, enrolado em granulado de leite — irresistivelmente macio.',
+      'Brigadeiro cremoso de leite em pó Ninho, enrolado em granulado de leite e nutela por cima — irresistivelmente macio.',
     priceWhole: 'R$ 3,00',
     priceWholeLabel: 'Unidade',
     priceSlice: 'R$ 260,00',
     priceSliceLabel: 'Cento',
-    ingredients: 'Leite Ninho e leite condensado',
+    ingredients: 'Leite Ninho e Nutela',
   },
   {
     name: 'Casadinho',
@@ -65,8 +65,7 @@ export const docinhos: MenuItem[] = [
     name: 'Brigadeiro de Paçoca',
     photo: 'images/doces/docinhos/brigadeiro_pacoca.jpg',
     tagline: 'Sabor de festa junina',
-    description:
-      'Brigadeiro cremoso de amendoim e paçoca, enrolado em pedaços de amendoim.',
+    description: 'Brigadeiro cremoso de amendoim e paçoca, enrolado em pedaços de amendoim.',
     priceWhole: 'R$ 2,00',
     priceWholeLabel: 'Unidade',
     priceSlice: 'R$ 250,00',
@@ -86,15 +85,25 @@ export const docinhos: MenuItem[] = [
     ingredients: 'Morango e leite condensado',
   },
   {
-    name: 'Uvinha',
-    photo: 'images/doces/docinhos/uvinha.jpg',
-    tagline: 'Fresquinho e divertido',
+    name: 'Caixa de Brigadeiros Sortidos',
+    photo: 'images/doces/docinhos/caixa_sortida.jpg',
+    tagline: 'Para presentear ou se presentear',
     description:
-      'Brigadeiro de base branca, colorido com corante verde e com uma uva verde sem caroço no centro.',
+      'Uma caixa com brigadeiros sortidos dos nossos sabores mais pedidos — perfeita para experimentar um pouquinho de cada.',
+    priceWhole: 'R$ 10,00',
+    priceWholeLabel: 'Caixa',
+    ingredients: 'Brigadeiros sortidos, conforme disponibilidade',
+  },
+  {
+    name: 'Brigadeiro de Churros',
+    photo: 'images/doces/docinhos/brigadeiro_churros.jpg',
+    tagline: 'Delicioso sabor de churros',
+    description:
+      'Brigadeiro de doce de leite com açúcar e canela, enrolado e finalizado com uma gotinha de doce de leite por cima.',
     priceWhole: 'R$ 2,50',
     priceWholeLabel: 'Unidade',
     priceSlice: 'R$ 270,00',
     priceSliceLabel: 'Cento',
-    ingredients: 'Brigadeiro branco e uva',
+    ingredients: 'Doce de leite, açúcar e canela',
   },
 ];
