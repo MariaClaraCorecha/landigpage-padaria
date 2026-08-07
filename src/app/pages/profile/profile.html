@@ -1,0 +1,38 @@
+<section class="profile">
+  <h1><mat-icon>shopping_basket</mat-icon> Minha Cestinha</h1>
+
+  @if (cart.items().length === 0) {
+    <p class="empty">Sua cestinha está vazia.</p>
+    <a mat-flat-button routerLink="/">Ver o cardápio</a>
+  } @else {
+    <ul class="lines">
+      @for (line of cart.items(); track line.item.name + line.priceType) {
+        <li class="line">
+          <img [src]="line.item.photo" [alt]="line.item.name" />
+          <div class="info">
+            <span class="name">{{ line.item.name }}</span>
+            <span class="variant">{{ variantLabel(line) }}</span>
+          </div>
+          <div class="quantity">
+            <button mat-icon-button (click)="decrement(line)" aria-label="Diminuir quantidade">
+              <mat-icon>remove</mat-icon>
+            </button>
+            <span>{{ line.quantity }}</span>
+            <button mat-icon-button (click)="increment(line)" aria-label="Aumentar quantidade">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+          <span class="subtotal">{{ formatCurrency(subtotal(line)) }}</span>
+          <button mat-icon-button (click)="cart.remove(line)" aria-label="Remover item">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </li>
+      }
+    </ul>
+
+    <div class="total">
+      <span>Valor final</span>
+      <span class="total-value">{{ formatCurrency(cart.total()) }}</span>
+    </div>
+  }
+</section>
