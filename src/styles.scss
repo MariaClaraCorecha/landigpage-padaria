@@ -11,6 +11,9 @@
   --color-beige: #fbf3dd;
   --color-pink-text: #a8496a;
   --color-pink-text-light: #f4b8cd;
+  --color-gold: #cda381;
+  --color-gold-light: #eabe9a;
+  --font-display: 'Fraunces', Georgia, serif;
 }
 
 html {
@@ -40,5 +43,12 @@ body {
   // Reset the user agent margin.
   margin: 0;
   height: 100%;
+}
+
+h1,
+h2,
+h3,
+mat-card-title {
+  font-family: var(--font-display);
 }
 /* You can add global styles to this file, and also import other style files */
