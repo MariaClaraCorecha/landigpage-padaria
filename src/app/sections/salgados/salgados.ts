@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { MenuSubsection } from '../../shared/menu-subsection/menu-subsection';
+import { folheados } from './folheados';
 
 @Component({
   selector: 'app-salgados',
-  imports: [MatIconModule],
+  imports: [MatIconModule, MenuSubsection],
   templateUrl: './salgados.html',
   styleUrl: './salgados.scss',
 })
-export class Salgados {}
+export class Salgados {
+  protected readonly folheados = folheados;
+}
