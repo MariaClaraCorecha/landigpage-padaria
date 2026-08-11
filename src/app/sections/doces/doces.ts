@@ -4,6 +4,7 @@ import { MenuSubsection } from '../../shared/menu-subsection/menu-subsection';
 import { bolos } from './bolos';
 import { docinhos } from './docinhos';
 import { tortas } from './tortas';
+import { biscoitos } from './biscoitos';
 
 @Component({
   selector: 'app-doces',
@@ -15,4 +16,5 @@ export class Doces {
   protected readonly bolos = bolos;
   protected readonly docinhos = docinhos;
   protected readonly tortas = tortas;
+  protected readonly biscoitos = biscoitos;
 }
