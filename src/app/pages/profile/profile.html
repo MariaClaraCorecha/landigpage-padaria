@@ -2,8 +2,11 @@
   <h1><mat-icon>shopping_basket</mat-icon> Minha Cestinha</h1>
 
   @if (cart.items().length === 0) {
-    <p class="empty">Sua cestinha está vazia.</p>
-    <a mat-flat-button routerLink="/">Ver o cardápio</a>
+    <div class="empty">
+      <mat-icon>cookie</mat-icon>
+      <p>Sua cestinha está vazia.</p>
+      <a mat-flat-button routerLink="/">Ver o cardápio</a>
+    </div>
   } @else {
     <ul class="lines">
       @for (line of cart.items(); track line.item.name + line.priceType + (line.flavor ?? '')) {
@@ -25,8 +28,13 @@
             </button>
           </div>
           <span class="subtotal">{{ formatCurrency(subtotal(line)) }}</span>
-          <button mat-icon-button (click)="cart.remove(line)" aria-label="Remover item">
-            <mat-icon>delete</mat-icon>
+          <button
+            mat-icon-button
+            class="remove-button"
+            (click)="cart.remove(line)"
+            aria-label="Remover item"
+          >
+            <mat-icon>delete_outline</mat-icon>
           </button>
         </li>
       }

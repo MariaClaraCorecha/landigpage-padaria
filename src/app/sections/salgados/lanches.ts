@@ -19,9 +19,9 @@ export const lanches: MenuItem[] = [
     tagline: 'Crocante por fora, saboroso por dentro',
     description:
       'Massa folhada levada ao forno até ficar crocante e douradinha, recheada com carne moída temperada e queijo derretido.',
-    priceWhole: 'R$ 9,00',
+    priceWhole: 'R$ 3,00',
     priceWholeLabel: 'Unidade',
-    priceSlice: 'R$ 96,00',
+    priceSlice: 'R$ 36,00',
     priceSliceLabel: 'Dúzia',
     ingredients: 'Carne moída temperada e queijo',
   },
@@ -38,12 +38,12 @@ export const lanches: MenuItem[] = [
     ingredients: 'Frango desfiado e catupiry',
   },
   {
-    name: 'Cuscuz Paulista',
+    name: 'Cuscuz',
     photo: 'images/salgados/cuscuz.jpg',
     tagline: 'Completo e cheio de sabor',
     description:
       'Cuscuz de milho temperado, prensado e servido com um ovo frito por cima — uma opção completa e caseira para o café da manhã ou lanche da tarde.',
-    priceWhole: 'R$ 15,00',
+    priceWhole: 'R$ 12,00',
     priceWholeLabel: 'Porção',
     ingredients: 'Milho e ovo frito',
   },
