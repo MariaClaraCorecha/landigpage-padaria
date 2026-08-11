@@ -14,10 +14,15 @@
   --color-gold: #cda381;
   --color-gold-light: #eabe9a;
   --font-display: 'Fraunces', Georgia, serif;
+
+  --radius-lg: 20px;
+  --shadow-soft: 0 14px 32px -18px rgba(75, 46, 34, 0.45);
+  --shadow-soft-hover: 0 20px 40px -16px rgba(75, 46, 34, 0.55);
 }
 
 html {
   height: 100%;
+  scroll-behavior: smooth;
   @include mat.theme(
     (
       color: (
@@ -36,9 +41,13 @@ body {
   // user's system settings.
   color-scheme: light;
 
-  background-color: var(--color-beige);
+  background: radial-gradient(1100px 520px at 50% -8%, rgba(234, 190, 154, 0.4), transparent 60%),
+    var(--color-beige);
+  background-attachment: fixed;
   color: var(--color-pink-text);
   font: var(--mat-sys-body-medium);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
 
   // Reset the user agent margin.
   margin: 0;
@@ -50,5 +59,7 @@ h2,
 h3,
 mat-card-title {
   font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 /* You can add global styles to this file, and also import other style files */
