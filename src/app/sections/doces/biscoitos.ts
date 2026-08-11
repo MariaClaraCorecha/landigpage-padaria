@@ -55,9 +55,9 @@ export const biscoitos: MenuItem[] = [
     tagline: 'Delicado e cheio de cor',
     description:
       'Casquinhas leves e crocantes por fora, macias por dentro, recheadas com ganache ou creme saborizado — disponível em diversas cores e sabores.',
-    priceWhole: 'R$ 5,00',
+    priceWhole: 'R$ 4,00',
     priceWholeLabel: 'Unidade',
-    priceSlice: 'R$ 54,00',
+    priceSlice: 'R$ 48,00',
     priceSliceLabel: 'Dúzia',
     ingredients: 'Farinha de amêndoas e ganache',
   },
