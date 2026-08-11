@@ -6,6 +6,7 @@ export type PriceType = 'whole' | 'slice';
 export interface CartLine {
   item: MenuItem;
   priceType: PriceType;
+  flavor?: string;
   quantity: number;
 }
 
@@ -33,15 +34,18 @@ export class Cart {
     return parseBrlPrice(price ?? line.item.priceWhole);
   }
 
-  add(item: MenuItem, priceType: PriceType): void {
+  add(item: MenuItem, priceType: PriceType, flavor?: string): void {
     this.lines.update((lines) => {
-      const existing = lines.find((line) => line.item.name === item.name && line.priceType === priceType);
+      const existing = lines.find(
+        (line) =>
+          line.item.name === item.name && line.priceType === priceType && line.flavor === flavor,
+      );
       if (existing) {
         return lines.map((line) =>
           line === existing ? { ...line, quantity: line.quantity + 1 } : line,
         );
       }
-      return [...lines, { item, priceType, quantity: 1 }];
+      return [...lines, { item, priceType, flavor, quantity: 1 }];
     });
   }
 

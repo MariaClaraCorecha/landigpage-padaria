@@ -6,20 +6,22 @@ export const geladas: MenuItem[] = [
     photo: 'images/bebidas/bebidas/sucofrutas.jpg',
     tagline: 'Fresquinho e feito na hora',
     description:
-      'Sucos naturais, sem adição de açúcar, batidos na hora e servidos bem gelados. Escolha o seu sabor favorito: Laranja, Cenoura com Laranja, Morango, Beterraba com Morango, Mirtilo ou Abacaxi com Gengibre.',
+      'Sucos naturais, sem adição de açúcar, batidos na hora e servidos bem gelados. Escolha o seu sabor favorito no seletor abaixo.',
     priceWhole: 'R$ 12,00',
     priceWholeLabel: 'Copo',
     ingredients: 'Frutas selecionadas, conforme o sabor escolhido',
+    flavors: ['Maracujá', 'Goiaba', 'Uva', 'Laranja', 'Pitaya', 'Acerola'],
   },
   {
     name: 'Milkshake',
     photo: 'images/bebidas/bebidas/milkshake.jpg',
     tagline: 'Cremoso e generoso',
     description:
-      'Milkshake bem cremoso, batido na hora e finalizado com uma cobertura especial. Escolha o seu sabor favorito: Morango (com chantilly e frutas vermelhas), Caramelo (com biscoito crocante), Chocolate (com raspas de chocolate branco) ou Ninho com Coco (finalizado com flocos de coco).',
+      'Milkshake bem cremoso, batido na hora e finalizado com uma cobertura especial. Escolha o seu sabor favorito no seletor abaixo.',
     priceWhole: 'R$ 18,00',
     priceWholeLabel: 'Copo',
     ingredients: 'Sorvete, leite e cobertura conforme o sabor escolhido',
+    flavors: ['Chocolate', 'Morango', 'Baunilha com Chocolate', 'Baunilha com Doce de Leite'],
   },
   {
     name: 'Refrigerante',
