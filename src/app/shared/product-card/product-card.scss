@@ -3,11 +3,21 @@
   display: flex;
   flex-direction: column;
   text-align: left;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-soft-hover);
+  }
 }
 
 .product-card img[mat-card-image] {
   height: 180px;
   object-fit: cover;
+  margin: 0;
 }
 
 mat-card-title {
@@ -21,9 +31,11 @@ mat-card-title {
 }
 
 .tagline {
-  margin: 0 0 4px;
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-style: italic;
   font-weight: 600;
-  color: var(--color-chocolate);
+  color: var(--color-pink-text);
 }
 
 .description {
@@ -44,11 +56,15 @@ mat-card-title {
 
 .details dt {
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-gold);
 }
 
 .details dd {
   margin: 0 0 4px;
+  color: var(--color-chocolate);
 }
 
 .actions {
