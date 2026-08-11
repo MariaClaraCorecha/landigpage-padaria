@@ -1,5 +1,13 @@
+:host {
+  display: flex;
+  min-width: 0;
+  width: 100%;
+}
+
 .nav {
   display: flex;
+  width: 100%;
+  min-width: 0;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
