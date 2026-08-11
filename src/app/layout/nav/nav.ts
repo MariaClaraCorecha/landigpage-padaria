@@ -19,5 +19,6 @@ export class Nav {
     { href: '#salgados', label: 'Salgados', icon: 'lunch_dining' },
     { href: '#folheados', label: 'Folheados', icon: 'bakery_dining' },
     { href: '#cafes', label: 'Cafés', icon: 'coffee' },
+    { href: '#bebidas', label: 'Bebidas', icon: 'local_drink' },
   ];
 }
