@@ -10,6 +10,13 @@ export interface CartLine {
   quantity: number;
 }
 
+export interface OrderReceipt {
+  orderNumber: string;
+  date: Date;
+  lines: CartLine[];
+  total: number;
+}
+
 function parseBrlPrice(price: string): number {
   const numeric = price.replace(/[^\d,]/g, '').replace(',', '.');
   return parseFloat(numeric) || 0;
@@ -63,5 +70,16 @@ export class Cart {
 
   clear(): void {
     this.lines.set([]);
+  }
+
+  checkout(): OrderReceipt {
+    const receipt: OrderReceipt = {
+      orderNumber: Math.floor(1000 + Math.random() * 9000).toString(),
+      date: new Date(),
+      lines: this.lines(),
+      total: this.total(),
+    };
+    this.clear();
+    return receipt;
   }
 }

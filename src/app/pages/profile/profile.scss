@@ -133,6 +133,68 @@ h1 {
   font-size: 1.4rem;
 }
 
+.checkout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 20px;
+  padding: 8px 0;
+  background-color: var(--color-chocolate);
+  color: var(--color-gold-light);
+}
+
+.receipt {
+  max-width: 480px;
+  margin: 24px auto 0;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  background: #fff8f5;
+  box-shadow: var(--shadow-soft);
+
+  h2 {
+    margin: 8px 0 4px;
+    color: var(--color-chocolate);
+  }
+
+  .lines {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .total {
+    width: 100%;
+  }
+
+  a[mat-flat-button] {
+    margin-top: 24px;
+    background-color: var(--color-chocolate);
+    color: var(--color-gold-light);
+  }
+}
+
+.receipt-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  color: var(--color-gold);
+}
+
+.receipt-meta {
+  margin: 0;
+  color: var(--color-pink-text);
+  font-size: 0.9rem;
+}
+
+.receipt-line {
+  grid-template-columns: 64px 1fr auto;
+}
+
 @media (max-width: 600px) {
   .line {
     grid-template-columns: 56px 1fr auto;

@@ -1,7 +1,35 @@
 <section class="profile">
   <h1><mat-icon>shopping_basket</mat-icon> Minha Cestinha</h1>
 
-  @if (cart.items().length === 0) {
+  @if (receipt(); as order) {
+    <div class="receipt">
+      <mat-icon class="receipt-icon">task_alt</mat-icon>
+      <h2>Pedido confirmado!</h2>
+      <p class="receipt-meta">Pedido nº {{ order.orderNumber }} · {{ formatDate(order.date) }}</p>
+
+      <ul class="lines">
+        @for (line of order.lines; track line.item.name + line.priceType + (line.flavor ?? '')) {
+          <li class="line receipt-line">
+            <img [src]="line.item.photo" [alt]="line.item.name" />
+            <div class="info">
+              <span class="name">{{ line.item.name }}</span>
+              <span class="variant">
+                {{ line.quantity }}x {{ variantLabel(line) }}{{ line.flavor ? ' · ' + line.flavor : '' }}
+              </span>
+            </div>
+            <span class="subtotal">{{ formatCurrency(subtotal(line)) }}</span>
+          </li>
+        }
+      </ul>
+
+      <div class="total">
+        <span>Valor final</span>
+        <span class="total-value">{{ formatCurrency(order.total) }}</span>
+      </div>
+
+      <a mat-flat-button routerLink="/" (click)="newOrder()">Fazer novo pedido</a>
+    </div>
+  } @else if (cart.items().length === 0) {
     <div class="empty">
       <mat-icon>cookie</mat-icon>
       <p>Sua cestinha está vazia.</p>
@@ -44,5 +72,10 @@
       <span>Valor final</span>
       <span class="total-value">{{ formatCurrency(cart.total()) }}</span>
     </div>
+
+    <button mat-flat-button class="checkout-button" (click)="checkout()">
+      <mat-icon>task_alt</mat-icon>
+      Finalizar Compra
+    </button>
   }
 </section>

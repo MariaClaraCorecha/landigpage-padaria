@@ -71,4 +71,10 @@ mat-card-title {
   justify-content: center;
   line-height: 1;
 }
+
+.app-snackbar {
+  --mdc-snackbar-container-color: var(--color-chocolate);
+  --mdc-snackbar-supporting-text-color: var(--color-gold-light);
+  --mat-snack-bar-button-color: var(--color-gold);
+}
 /* You can add global styles to this file, and also import other style files */

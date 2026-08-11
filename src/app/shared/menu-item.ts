@@ -9,4 +9,5 @@ export interface MenuItem {
   priceSliceLabel?: string;
   ingredients: string;
   flavors?: string[];
+  flavorLimit?: number;
 }

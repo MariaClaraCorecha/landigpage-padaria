@@ -8,21 +8,44 @@
     <p class="description">{{ item().description }}</p>
     @if (item().flavors; as flavors) {
       <div class="flavor-picker">
-        <span class="flavor-picker-label">Sabor</span>
-        <div class="flavor-list" role="radiogroup" aria-label="Sabor">
-          @for (flavor of flavors; track flavor) {
-            <button
-              type="button"
-              class="flavor-chip"
-              [class.selected]="selectedFlavor() === flavor"
-              role="radio"
-              [attr.aria-checked]="selectedFlavor() === flavor"
-              (click)="selectFlavor(flavor)"
-            >
-              {{ flavor }}
-            </button>
-          }
-        </div>
+        @if (isMultiFlavor()) {
+          <span class="flavor-picker-label">
+            Sabores ({{ selectedFlavors().length }}/{{ item().flavorLimit }})
+          </span>
+          <div class="flavor-list" role="group" aria-label="Sabores">
+            @for (flavor of flavors; track flavor) {
+              <button
+                type="button"
+                class="flavor-chip"
+                [class.selected]="selectedFlavors().includes(flavor)"
+                [class.disabled]="
+                  !selectedFlavors().includes(flavor) && selectedFlavors().length >= (item().flavorLimit ?? 1)
+                "
+                role="checkbox"
+                [attr.aria-checked]="selectedFlavors().includes(flavor)"
+                (click)="toggleFlavor(flavor)"
+              >
+                {{ flavor }}
+              </button>
+            }
+          </div>
+        } @else {
+          <span class="flavor-picker-label">Sabor</span>
+          <div class="flavor-list" role="radiogroup" aria-label="Sabor">
+            @for (flavor of flavors; track flavor) {
+              <button
+                type="button"
+                class="flavor-chip"
+                [class.selected]="selectedFlavor() === flavor"
+                role="radio"
+                [attr.aria-checked]="selectedFlavor() === flavor"
+                (click)="selectFlavor(flavor)"
+              >
+                {{ flavor }}
+              </button>
+            }
+          </div>
+        }
       </div>
     }
     <dl class="details">
