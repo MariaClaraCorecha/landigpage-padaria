@@ -15,6 +15,7 @@ interface NavLink {
 })
 export class Nav {
   protected readonly links: NavLink[] = [
+    { href: '#panificacao', label: 'Panificação', icon: 'bakery_dining' },
     { href: '#doces', label: 'Doces', icon: 'icecream' },
     { href: '#salgados', label: 'Salgados', icon: 'lunch_dining' },
     { href: '#folheados', label: 'Folheados', icon: 'bakery_dining' },
