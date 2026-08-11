@@ -8,4 +8,5 @@ export interface MenuItem {
   priceSlice?: string;
   priceSliceLabel?: string;
   ingredients: string;
+  flavors?: string[];
 }

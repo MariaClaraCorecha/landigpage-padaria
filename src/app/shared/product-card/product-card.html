@@ -6,6 +6,16 @@
   <mat-card-content class="content">
     <p class="tagline">{{ item().tagline }}</p>
     <p class="description">{{ item().description }}</p>
+    @if (item().flavors; as flavors) {
+      <mat-form-field appearance="outline" class="flavor-field">
+        <mat-label>Sabor</mat-label>
+        <mat-select [value]="selectedFlavor()" (selectionChange)="selectFlavor($event.value)">
+          @for (flavor of flavors; track flavor) {
+            <mat-option [value]="flavor">{{ flavor }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    }
     <dl class="details">
       <div>
         <dt>{{ wholeLabel() }}</dt>
