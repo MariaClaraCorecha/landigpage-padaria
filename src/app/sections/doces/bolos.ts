@@ -71,4 +71,14 @@ export const bolos: MenuItem[] = [
     priceSlice: 'R$ 200,00',
     ingredients: 'Cacau, cream cheese e chocolate branco',
   },
+  {
+    name: 'Brownie de Chocolate',
+    photo: 'images/doces/bolos/bolobrownie.jpg',
+    tagline: 'Denso, molhadinho e puro chocolate',
+    description:
+      'Brownie amanteigado com chocolate meio amargo, casquinha crocante por fora e recheio úmido por dentro — para quem não abre mão de um chocolate intenso.',
+    priceWhole: 'R$ 180,00',
+    priceSlice: 'R$ 12,00',
+    ingredients: 'Chocolate meio amargo e nozes',
+  },
 ];
