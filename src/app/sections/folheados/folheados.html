@@ -1,4 +1,6 @@
 <section id="folheados" class="menu-section">
   <h2><mat-icon>bakery_dining</mat-icon> Folheados</h2>
-  <p>Em breve, nossos folheados por aqui.</p>
+
+  <app-menu-subsection icon="cookie" title="Folheados Doces" [items]="doces" />
+  <app-menu-subsection icon="lunch_dining" title="Folheados Salgados" [items]="salgados" />
 </section>
