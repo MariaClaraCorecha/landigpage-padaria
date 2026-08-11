@@ -1,7 +1,7 @@
 .profile {
   max-width: 900px;
   margin: 0 auto;
-  padding: 32px 16px;
+  padding: 32px 16px 64px;
 }
 
 h1 {
@@ -12,7 +12,28 @@ h1 {
 }
 
 .empty {
-  margin: 24px 0;
+  margin: 40px auto;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  padding: 40px 24px;
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--color-gold);
+  background: rgba(255, 255, 255, 0.4);
+
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    color: var(--color-gold);
+  }
+
+  p {
+    margin: 0;
+  }
 }
 
 .lines {
@@ -21,7 +42,7 @@ h1 {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .line {
@@ -29,20 +50,28 @@ h1 {
   grid-template-columns: 64px 1fr auto auto auto;
   align-items: center;
   gap: 16px;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(75, 46, 34, 0.15);
+  padding: 12px 16px;
+  border-radius: var(--radius-lg);
+  background: #fff8f5;
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow 0.25s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-soft-hover);
+  }
 }
 
 .line img {
   width: 64px;
   height: 64px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .info {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .name {
@@ -58,12 +87,34 @@ h1 {
   display: flex;
   align-items: center;
   gap: 4px;
+  padding: 2px 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(205, 163, 129, 0.5);
+
+  span {
+    min-width: 1.5em;
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-chocolate);
+  }
 }
 
 .subtotal {
   font-weight: 600;
   min-width: 90px;
   text-align: right;
+  color: var(--color-chocolate);
+}
+
+.remove-button {
+  color: var(--color-pink-text);
+  opacity: 0.6;
+  transition: color 0.2s ease, opacity 0.2s ease;
+
+  &:hover {
+    color: #ba1a1a;
+    opacity: 1;
+  }
 }
 
 .total {
@@ -84,22 +135,36 @@ h1 {
 
 @media (max-width: 600px) {
   .line {
-    grid-template-columns: 48px 1fr auto;
+    grid-template-columns: 56px 1fr auto;
     grid-template-rows: auto auto;
+    row-gap: 8px;
   }
 
   .line img {
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     grid-row: 1 / 3;
+  }
+
+  .info {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .remove-button {
+    grid-column: 3;
+    grid-row: 1;
   }
 
   .quantity {
     grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
   }
 
   .subtotal {
-    grid-column: 2;
-    text-align: left;
+    grid-column: 3;
+    grid-row: 2;
+    text-align: right;
   }
 }

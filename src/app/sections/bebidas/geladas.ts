@@ -28,10 +28,11 @@ export const geladas: MenuItem[] = [
     photo: 'images/bebidas/bebidas/refrigerante.jpg',
     tagline: 'Geladinho na medida certa',
     description:
-      'Refrigerante servido bem gelado para acompanhar seu lanche. Disponível nos sabores Coca-Cola e Fanta Laranja.',
+      'Refrigerante servido bem gelado para acompanhar seu lanche. Escolha o seu sabor favorito no seletor abaixo.',
     priceWhole: 'R$ 7,00',
     priceWholeLabel: 'Lata',
-    ingredients: 'Coca-Cola ou Fanta Laranja',
+    ingredients: 'Coca-Cola ou Fanta Laranja, conforme o sabor escolhido',
+    flavors: ['Coca-Cola', 'Fanta Laranja'],
   },
   {
     name: 'Água Mineral',
