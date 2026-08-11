@@ -5,6 +5,8 @@ import { bolos } from './bolos';
 import { docinhos } from './docinhos';
 import { tortas } from './tortas';
 import { biscoitos } from './biscoitos';
+import { donuts } from './donuts';
+import { sonhos } from './sonhos';
 
 @Component({
   selector: 'app-doces',
@@ -17,4 +19,6 @@ export class Doces {
   protected readonly docinhos = docinhos;
   protected readonly tortas = tortas;
   protected readonly biscoitos = biscoitos;
+  protected readonly donuts = donuts;
+  protected readonly sonhos = sonhos;
 }
