@@ -55,4 +55,14 @@ export const paesespeciais: MenuItem[] = [
     priceSliceLabel: 'Dúzia',
     ingredients: 'Canela e açúcar',
   },
+  {
+    name: 'Coroa Decorada',
+    photo: 'images/panificacao/pao13.jpg',
+    tagline: 'Peça especial para ocasiões festivas',
+    description:
+      'Pão trabalhado à mão em formato de coroa, com detalhes esculpidos na massa — uma peça decorativa para compor a mesa em ocasiões especiais.',
+    priceWhole: 'R$ 45,00',
+    priceWholeLabel: 'Unidade',
+    ingredients: 'Farinha de trigo, água, sal e fermento',
+  },
 ];
