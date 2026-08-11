@@ -81,9 +81,9 @@ export const paesdodia: MenuItem[] = [
     tagline: 'Casca escura e sabor adocicado',
     description:
       'Pãozinho de casca escura e brilhante com um leve toque adocicado, miolo macio — ótimo puro ou para sanduíches.',
-    priceWhole: 'R$ 4,00',
+    priceWhole: 'R$ 1,50',
     priceWholeLabel: 'Unidade',
-    priceSlice: 'R$ 42,00',
+    priceSlice: 'R$ 18,00',
     priceSliceLabel: 'Dúzia',
     ingredients: 'Farinha de trigo, melado e fermento',
   },
