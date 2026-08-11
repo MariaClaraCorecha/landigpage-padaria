@@ -72,6 +72,18 @@ export const bolos: MenuItem[] = [
     ingredients: 'Cacau, cream cheese e chocolate branco',
   },
   {
+    name: 'Cupcake',
+    photo: 'images/doces/bolos/cupcake.jpg',
+    tagline: 'Fofinho e cheio de cor',
+    description:
+      'Cupcake de massa de chocolate fofinha, coberto com um generoso chantilly colorido e finalizado com confeitos e granulados — perfeito para festas ou para adoçar o dia.',
+    priceWhole: 'R$ 9,00',
+    priceWholeLabel: 'Unidade',
+    priceSlice: 'R$ 96,00',
+    priceSliceLabel: 'Dúzia',
+    ingredients: 'Chocolate e chantilly',
+  },
+  {
     name: 'Brownie de Chocolate',
     photo: 'images/doces/bolos/bolobrownie.jpg',
     tagline: 'Denso, molhadinho e puro chocolate',
