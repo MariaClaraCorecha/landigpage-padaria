@@ -1,15 +1,13 @@
 import { Component, computed, input, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSelectModule } from '@angular/material/select';
 import { MenuItem } from '../menu-item';
 import { Cart, PriceType } from '../cart';
 
 @Component({
   selector: 'app-product-card',
-  imports: [MatCardModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatSelectModule],
+  imports: [MatCardModule, MatButtonModule, MatIconModule],
   templateUrl: './product-card.html',
   styleUrl: './product-card.scss',
 })

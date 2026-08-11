@@ -43,8 +43,50 @@ mat-card-title {
   line-height: 1.5;
 }
 
-.flavor-field {
-  width: 100%;
+.flavor-picker {
+  margin: 0 0 12px;
+}
+
+.flavor-picker-label {
+  display: block;
+  margin: 0 0 6px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-gold);
+}
+
+.flavor-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.flavor-chip {
+  font: inherit;
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(205, 163, 129, 0.55);
+  background-color: transparent;
+  color: var(--color-chocolate);
+  font-size: 0.8rem;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    border-color: var(--color-gold);
+    background-color: rgba(205, 163, 129, 0.15);
+  }
+
+  &.selected {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-chocolate);
+    font-weight: 600;
+    transform: translateY(-1px);
+  }
 }
 
 .details {

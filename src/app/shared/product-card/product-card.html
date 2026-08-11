@@ -7,14 +7,23 @@
     <p class="tagline">{{ item().tagline }}</p>
     <p class="description">{{ item().description }}</p>
     @if (item().flavors; as flavors) {
-      <mat-form-field appearance="outline" class="flavor-field">
-        <mat-label>Sabor</mat-label>
-        <mat-select [value]="selectedFlavor()" (selectionChange)="selectFlavor($event.value)">
+      <div class="flavor-picker">
+        <span class="flavor-picker-label">Sabor</span>
+        <div class="flavor-list" role="radiogroup" aria-label="Sabor">
           @for (flavor of flavors; track flavor) {
-            <mat-option [value]="flavor">{{ flavor }}</mat-option>
+            <button
+              type="button"
+              class="flavor-chip"
+              [class.selected]="selectedFlavor() === flavor"
+              role="radio"
+              [attr.aria-checked]="selectedFlavor() === flavor"
+              (click)="selectFlavor(flavor)"
+            >
+              {{ flavor }}
+            </button>
           }
-        </mat-select>
-      </mat-form-field>
+        </div>
+      </div>
     }
     <dl class="details">
       <div>

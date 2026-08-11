@@ -24,15 +24,15 @@ export const geladas: MenuItem[] = [
     flavors: ['Chocolate', 'Morango', 'Baunilha com Chocolate', 'Baunilha com Doce de Leite'],
   },
   {
-    name: 'Refrigerante',
+    name: 'Coca Cola',
     photo: 'images/bebidas/bebidas/refrigerante.jpg',
     tagline: 'Geladinho na medida certa',
     description:
       'Refrigerante servido bem gelado para acompanhar seu lanche. Escolha o seu sabor favorito no seletor abaixo.',
     priceWhole: 'R$ 7,00',
     priceWholeLabel: 'Lata',
-    ingredients: 'Coca-Cola ou Fanta Laranja, conforme o sabor escolhido',
-    flavors: ['Coca-Cola', 'Fanta Laranja'],
+    ingredients: 'Coca-Cola ou Coca Zero, conforme o sabor escolhido',
+    flavors: ['Coca-Cola', 'Coca Cola Zero'],
   },
   {
     name: 'Água Mineral',
