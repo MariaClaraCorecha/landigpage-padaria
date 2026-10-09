@@ -15,7 +15,7 @@
     )
   );
 
-  @include mat.form-field-density(-4);
+  @include mat.form-field-density(-3);
   @include mat.button-density(-2);
 
   @include mat.button-overrides(
@@ -115,8 +115,15 @@ mat-card-subtitle {
   flex-wrap: wrap;
   gap: 6px;
   padding: 8px 16px 16px;
+  min-height: 0;
 
   button {
-    flex: 1;
+    flex: 1 1 auto;
+    min-width: fit-content;
+  }
+
+  .price {
+    margin-left: 4px;
+    font-weight: 700;
   }
 }
