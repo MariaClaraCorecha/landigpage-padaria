@@ -2,14 +2,24 @@ import { Component, computed, input, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MenuItem } from '../menu-item';
 import { Cart, PriceType } from '../cart';
 
 @Component({
   selector: 'app-product-card',
-  imports: [MatCardModule, MatButtonModule, MatIconModule],
+  imports: [
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatTooltipModule,
+  ],
   templateUrl: './product-card.html',
   styleUrl: './product-card.scss',
 })
@@ -26,6 +36,11 @@ export class ProductCard {
   private readonly chosenFlavors = signal<string[]>([]);
   readonly selectedFlavors = this.chosenFlavors.asReadonly();
   readonly selectedFlavorsLabel = computed(() => this.chosenFlavors().join(', '));
+  readonly flavorLabel = computed(() =>
+    this.isMultiFlavor()
+      ? `Sabores (${this.chosenFlavors().length}/${this.item().flavorLimit})`
+      : 'Sabor',
+  );
 
   constructor(
     private readonly cart: Cart,
@@ -37,17 +52,9 @@ export class ProductCard {
     this.chosenFlavor.set(flavor);
   }
 
-  toggleFlavor(flavor: string): void {
+  setFlavors(flavors: string[]): void {
     const limit = this.item().flavorLimit ?? 1;
-    this.chosenFlavors.update((flavors) => {
-      if (flavors.includes(flavor)) {
-        return flavors.filter((f) => f !== flavor);
-      }
-      if (flavors.length >= limit) {
-        return flavors;
-      }
-      return [...flavors, flavor];
-    });
+    this.chosenFlavors.set(flavors.slice(0, limit));
   }
 
   addToCart(priceType: PriceType): void {

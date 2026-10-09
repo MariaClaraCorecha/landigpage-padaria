@@ -1,79 +1,50 @@
-<mat-card class="product-card">
-  <img mat-card-image [src]="item().photo" [alt]="item().name" />
+<mat-card class="product-card" appearance="outlined">
+  <img mat-card-image [src]="item().photo" [alt]="item().name" loading="lazy" />
   <mat-card-header>
     <mat-card-title>{{ item().name }}</mat-card-title>
+    <mat-card-subtitle>{{ item().tagline }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content class="content">
-    <p class="tagline">{{ item().tagline }}</p>
-    <p class="description">{{ item().description }}</p>
+    <p class="description" [matTooltip]="item().description" matTooltipPosition="above">
+      {{ item().description }}
+    </p>
     @if (item().flavors; as flavors) {
-      <div class="flavor-picker">
+      <mat-form-field class="flavor-field" appearance="outline" subscriptSizing="dynamic">
+        <mat-label>{{ flavorLabel() }}</mat-label>
         @if (isMultiFlavor()) {
-          <span class="flavor-picker-label">
-            Sabores ({{ selectedFlavors().length }}/{{ item().flavorLimit }})
-          </span>
-          <div class="flavor-list" role="group" aria-label="Sabores">
+          <mat-select multiple [value]="selectedFlavors()" (selectionChange)="setFlavors($event.value)">
             @for (flavor of flavors; track flavor) {
-              <button
-                type="button"
-                class="flavor-chip"
-                [class.selected]="selectedFlavors().includes(flavor)"
-                [class.disabled]="
-                  !selectedFlavors().includes(flavor) && selectedFlavors().length >= (item().flavorLimit ?? 1)
-                "
-                role="checkbox"
-                [attr.aria-checked]="selectedFlavors().includes(flavor)"
-                (click)="toggleFlavor(flavor)"
+              <mat-option
+                [value]="flavor"
+                [disabled]="!selectedFlavors().includes(flavor) && selectedFlavors().length >= (item().flavorLimit ?? 1)"
               >
                 {{ flavor }}
-              </button>
+              </mat-option>
             }
-          </div>
+          </mat-select>
         } @else {
-          <span class="flavor-picker-label">Sabor</span>
-          <div class="flavor-list" role="radiogroup" aria-label="Sabor">
+          <mat-select [value]="selectedFlavor()" (selectionChange)="selectFlavor($event.value)">
             @for (flavor of flavors; track flavor) {
-              <button
-                type="button"
-                class="flavor-chip"
-                [class.selected]="selectedFlavor() === flavor"
-                role="radio"
-                [attr.aria-checked]="selectedFlavor() === flavor"
-                (click)="selectFlavor(flavor)"
-              >
-                {{ flavor }}
-              </button>
+              <mat-option [value]="flavor">{{ flavor }}</mat-option>
             }
-          </div>
+          </mat-select>
         }
-      </div>
+      </mat-form-field>
     }
-    <dl class="details">
-      <div>
-        <dt>{{ wholeLabel() }}</dt>
-        <dd>{{ item().priceWhole }}</dd>
-      </div>
-      @if (item().priceSlice) {
-        <div>
-          <dt>{{ sliceLabel() }}</dt>
-          <dd>{{ item().priceSlice }}</dd>
-        </div>
-      }
-      <div>
-        <dt>Ingredientes principais</dt>
-        <dd>{{ item().ingredients }}</dd>
-      </div>
-    </dl>
+    <p class="ingredients" [matTooltip]="item().ingredients" matTooltipPosition="above">
+      <mat-icon>eco</mat-icon>
+      <span>{{ item().ingredients }}</span>
+    </p>
   </mat-card-content>
   <mat-card-actions class="actions">
-    <button mat-stroked-button (click)="addToCart('whole')">
-      <mat-icon>add</mat-icon>
-      {{ wholeLabel() }}
+    <button mat-flat-button (click)="addToCart('whole')">
+      <mat-icon>add_shopping_cart</mat-icon>
+      {{ wholeLabel() }} · {{ item().priceWhole }}
     </button>
     @if (item().priceSlice) {
       <button mat-stroked-button (click)="addToCart('slice')">
-        <mat-icon>add</mat-icon>
-        {{ sliceLabel() }}
+        <mat-icon>add_shopping_cart</mat-icon>
+        {{ sliceLabel() }} · {{ item().priceSlice }}
       </button>
     }
   </mat-card-actions>
