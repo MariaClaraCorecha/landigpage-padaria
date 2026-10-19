@@ -12,11 +12,18 @@
       <mat-form-field class="flavor-field" appearance="outline" subscriptSizing="dynamic">
         <mat-label>{{ flavorLabel() }}</mat-label>
         @if (isMultiFlavor()) {
-          <mat-select multiple [value]="selectedFlavors()" (selectionChange)="setFlavors($event.value)">
+          <mat-select
+            multiple
+            [value]="selectedFlavors()"
+            (selectionChange)="setFlavors($event.value)"
+          >
             @for (flavor of flavors; track flavor) {
               <mat-option
                 [value]="flavor"
-                [disabled]="!selectedFlavors().includes(flavor) && selectedFlavors().length >= (item().flavorLimit ?? 1)"
+                [disabled]="
+                  !selectedFlavors().includes(flavor) &&
+                  selectedFlavors().length >= (item().flavorLimit ?? 1)
+                "
               >
                 {{ flavor }}
               </mat-option>
