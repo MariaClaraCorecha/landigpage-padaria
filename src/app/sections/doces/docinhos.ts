@@ -3,7 +3,7 @@ import { MenuItem } from '../../shared/menu-item';
 export const docinhos: MenuItem[] = [
   {
     name: 'Brigadeiro Tradicional',
-    photo: 'images/doces/docinhos/brigadeiro_tradicional.jpg',
+    photo: 'images/doces/docinhos/brigadeiro_tradicional.webp',
     tagline: 'O clássico de sempre',
     description:
       'Chocolate cremoso ao leite, enrolado à mão e finalizado com granulado — o docinho que não pode faltar em nenhuma festa.',
@@ -15,7 +15,7 @@ export const docinhos: MenuItem[] = [
   },
   {
     name: 'Beijinho de Coco',
-    photo: 'images/doces/docinhos/beijinho_coco.jpg',
+    photo: 'images/doces/docinhos/beijinho_coco.webp',
     tagline: 'Docinho e cheiroso',
     description:
       'Leite condensado com coco fresco ralado, finalizado com um cravo e coco em flocos por cima.',
@@ -27,7 +27,7 @@ export const docinhos: MenuItem[] = [
   },
   {
     name: 'Cajuzinho',
-    photo: 'images/doces/docinhos/cajuzinho.jpg',
+    photo: 'images/doces/docinhos/cajuzinho.webp',
     tagline: 'Amendoado e charmoso',
     description:
       'Amendoim moído com leite condensado, moldado em formato de caju e coberto com açúcar cristal.',
@@ -39,7 +39,7 @@ export const docinhos: MenuItem[] = [
   },
   {
     name: 'Brigadeiro de Ninho com Nutella',
-    photo: 'images/doces/docinhos/brigadeiro_ninho.jpg',
+    photo: 'images/doces/docinhos/brigadeiro_ninho.webp',
     tagline: 'Cremoso e aveludado',
     description:
       'Brigadeiro cremoso de leite em pó Ninho, enrolado em granulado de leite e nutela por cima — irresistivelmente macio.',
@@ -51,7 +51,7 @@ export const docinhos: MenuItem[] = [
   },
   {
     name: 'Casadinho',
-    photo: 'images/doces/docinhos/casadinho.jpg',
+    photo: 'images/doces/docinhos/casadinho.webp',
     tagline: 'Dupla perfeita',
     description:
       'União entre o brigadeiro branco tradicional e o brigadeiro de chocolate ao leite, envolvidos em açúcar refinado.',
@@ -63,7 +63,7 @@ export const docinhos: MenuItem[] = [
   },
   {
     name: 'Brigadeiro de Paçoca',
-    photo: 'images/doces/docinhos/brigadeiro_pacoca.jpg',
+    photo: 'images/doces/docinhos/brigadeiro_pacoca.webp',
     tagline: 'Sabor de festa junina',
     description: 'Brigadeiro cremoso de amendoim e paçoca, enrolado em pedaços de amendoim.',
     priceWhole: 'R$ 2,00',
@@ -74,7 +74,7 @@ export const docinhos: MenuItem[] = [
   },
   {
     name: 'Brigadeiro de Morango',
-    photo: 'images/doces/docinhos/brigadeiro_morango.jpg',
+    photo: 'images/doces/docinhos/brigadeiro_morango.webp',
     tagline: 'Rosa e cheio de sabor',
     description:
       'Brigadeiro de base branca com pedaços de morango, cremoso e com uma coloração rosa vibrante e alegre.',
@@ -86,7 +86,7 @@ export const docinhos: MenuItem[] = [
   },
   {
     name: 'Caixa de Brigadeiros Sortidos (12 unidades)',
-    photo: 'images/doces/docinhos/caixa_sortida.jpg',
+    photo: 'images/doces/docinhos/caixa_sortida.webp',
     tagline: 'Para presentear ou se presentear',
     description:
       'Uma caixa com 12 brigadeiros — escolha os sabores que quiser entre as opções abaixo.',
@@ -107,7 +107,7 @@ export const docinhos: MenuItem[] = [
   },
   {
     name: 'Brigadeiro de Churros',
-    photo: 'images/doces/docinhos/brigadeiro_churros.jpg',
+    photo: 'images/doces/docinhos/brigadeiro_churros.webp',
     tagline: 'Delicioso sabor de churros',
     description:
       'Brigadeiro de doce de leite com açúcar e canela, enrolado e finalizado com uma gotinha de doce de leite por cima.',
