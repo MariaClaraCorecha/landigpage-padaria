@@ -1,4 +1,4 @@
-import { Injectable, computed, signal } from '@angular/core';
+import { Injectable, computed, effect, signal } from '@angular/core';
 import { MenuItem } from './menu-item';
 
 export type PriceType = 'whole' | 'slice';
@@ -17,14 +17,36 @@ export interface OrderReceipt {
   total: number;
 }
 
-function parseBrlPrice(price: string): number {
+const STORAGE_KEY = 'padaria:cart';
+
+export function parseBrlPrice(price: string): number {
   const numeric = price.replace(/[^\d,]/g, '').replace(',', '.');
   return parseFloat(numeric) || 0;
 }
 
+function loadLines(): CartLine[] {
+  try {
+    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
+    return Array.isArray(stored) ? stored : [];
+  } catch {
+    return [];
+  }
+}
+
 @Injectable({ providedIn: 'root' })
 export class Cart {
-  private readonly lines = signal<CartLine[]>([]);
+  private readonly lines = signal<CartLine[]>(loadLines());
+
+  constructor() {
+    effect(() => {
+      const lines = this.lines();
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(lines));
+      } catch {
+        // Storage may be unavailable (private mode); the cart still works for this visit.
+      }
+    });
+  }
 
   readonly items = this.lines.asReadonly();
 
