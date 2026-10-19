@@ -1,6 +1,11 @@
-<nav class="nav">
+<nav class="nav" aria-label="Categorias do cardápio">
   @for (link of links; track link.href) {
-    <a class="nav-link" [href]="link.href">
+    <a
+      class="nav-link"
+      [href]="link.href"
+      [class.active]="active() === link.href"
+      [attr.aria-current]="active() === link.href ? 'location' : null"
+    >
       <mat-icon>{{ link.icon }}</mat-icon>
       <span>{{ link.label }}</span>
     </a>
