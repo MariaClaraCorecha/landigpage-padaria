@@ -3,7 +3,7 @@ import { MenuItem } from '../../shared/menu-item';
 export const tortas: MenuItem[] = [
   {
     name: 'Torta Cheesecake',
-    photo: 'images/doces/tortas/tortacheesecake.jpg',
+    photo: 'images/doces/tortas/tortacheesecake.webp',
     tagline: 'Cremosa e irresistível',
     description:
       'Base crocante de biscoito com um recheio aveludado de cream cheese, finalizada com calda de frutas vermelhas — equilíbrio perfeito entre doce e azedinho.',
@@ -13,7 +13,7 @@ export const tortas: MenuItem[] = [
   },
   {
     name: 'Torta de Doce de Leite',
-    photo: 'images/doces/tortas/tortadedocedeleite.jpg',
+    photo: 'images/doces/tortas/tortadedocedeleite.webp',
     tagline: 'Puro conforto',
     description:
       'Massa amanteigada recheada com doce de leite cremoso e cobertura de chantilly, finalizada com raspas de chocolate — um mergulho no doce de leite em cada fatia.',
@@ -23,7 +23,7 @@ export const tortas: MenuItem[] = [
   },
   {
     name: 'Torta Folheada',
-    photo: 'images/doces/tortas/tortafolheada.jpg',
+    photo: 'images/doces/tortas/tortafolheada.webp',
     tagline: 'Crocante em camadas',
     description:
       'Camadas de massa folhada crocante intercaladas com creme de confeiteiro, finalizada com açúcar de confeiteiro — leve, amanteigada e cheia de textura.',
@@ -33,7 +33,7 @@ export const tortas: MenuItem[] = [
   },
   {
     name: 'Torta de Framboesa',
-    photo: 'images/doces/tortas/tortaframboesa.jpg',
+    photo: 'images/doces/tortas/tortaframboesa.webp',
     tagline: 'Sofisticada e frutada',
     description:
       'Base amanteigada com creme de confeiteiro e cobertura generosa de framboesas frescas — elegante, levemente ácida e cheia de sabor.',
@@ -43,7 +43,7 @@ export const tortas: MenuItem[] = [
   },
   {
     name: 'Torta de Laranja',
-    photo: 'images/doces/tortas/tortalaranja.jpg',
+    photo: 'images/doces/tortas/tortalaranja.webp',
     tagline: 'Cítrica e refrescante',
     description:
       'Massa amanteigada com recheio cremoso de laranja e um toque de raspas cítricas — leve, aromática e perfeita para qualquer hora do dia.',
@@ -53,7 +53,7 @@ export const tortas: MenuItem[] = [
   },
   {
     name: 'Torta de Maçã',
-    photo: 'images/doces/tortas/tortamaca.jpg',
+    photo: 'images/doces/tortas/tortamaca.webp',
     tagline: 'Clássica e aconchegante',
     description:
       'Fatias de maçã caramelizadas com canela sobre uma massa amanteigada crocante — um clássico que aquece o coração.',
@@ -63,7 +63,7 @@ export const tortas: MenuItem[] = [
   },
   {
     name: 'Torta de Morango',
-    photo: 'images/doces/tortas/tortamorango.jpg',
+    photo: 'images/doces/tortas/tortamorango.webp',
     tagline: 'Fresca e delicada',
     description:
       'Base amanteigada com creme de confeiteiro e cobertura de morangos frescos brilhantes — leve, colorida e cheia de sabor.',
