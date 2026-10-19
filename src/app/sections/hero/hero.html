@@ -1,0 +1,36 @@
+<section class="hero" aria-labelledby="hero-title">
+  <img
+    class="hero-image"
+    src="images/hero.webp"
+    alt=""
+    width="1400"
+    height="933"
+    fetchpriority="high"
+  />
+  <div class="hero-content">
+    <p class="eyebrow">Fornada fresquinha todos os dias</p>
+    <h1 id="hero-title">Pães, doces e cafés feitos com carinho</h1>
+    <p class="lead">
+      Do pão francês quentinho ao bolo de aniversário: escolha seus favoritos, monte sua cestinha e
+      finalize o pedido em poucos cliques.
+    </p>
+    <div class="hero-actions">
+      <a mat-flat-button href="#panificacao">
+        <mat-icon>restaurant_menu</mat-icon>
+        Ver cardápio
+      </a>
+      <a mat-stroked-button routerLink="/perfil">
+        <mat-icon>shopping_basket</mat-icon>
+        Minha cestinha
+      </a>
+    </div>
+    <ul class="highlights">
+      @for (highlight of highlights; track highlight.label) {
+        <li>
+          <strong>{{ highlight.value }}</strong>
+          <span>{{ highlight.label }}</span>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
