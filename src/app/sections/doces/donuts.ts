@@ -3,7 +3,7 @@ import { MenuItem } from '../../shared/menu-item';
 export const donuts: MenuItem[] = [
   {
     name: 'Donut de Chocolate',
-    photo: 'images/doces/donuts/donut_chocolate.jpg',
+    photo: 'images/doces/donuts/donut_chocolate.webp',
     tagline: 'Clássico e coberto de granulado',
     description:
       'Massa fofinha de donut coberta com uma generosa camada de chocolate e finalizada com granulado colorido.',
@@ -15,7 +15,7 @@ export const donuts: MenuItem[] = [
   },
   {
     name: 'Donut Confeitado',
-    photo: 'images/doces/donuts/donut_confeitado.jpg',
+    photo: 'images/doces/donuts/donut_confeitado.webp',
     tagline: 'Colorido e cheio de graça',
     description:
       'Donut coberto com glacê rosa e uma chuva generosa de confeitos coloridos — a cara da festa.',
@@ -27,7 +27,7 @@ export const donuts: MenuItem[] = [
   },
   {
     name: 'Donut de Doce de Leite',
-    photo: 'images/doces/donuts/donut_docedeleite.jpg',
+    photo: 'images/doces/donuts/donut_docedeleite.webp',
     tagline: 'Docinho e generoso',
     description:
       'Donut coberto com doce de leite cremoso, farofinha de biscoito e um toque extra de doce de leite por cima.',
