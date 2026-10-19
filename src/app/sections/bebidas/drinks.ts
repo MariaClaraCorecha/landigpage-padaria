@@ -3,7 +3,7 @@ import { MenuItem } from '../../shared/menu-item';
 export const drinks: MenuItem[] = [
   {
     name: 'Soda Italiana',
-    photo: 'images/bebidas/bebidas/drink4.jpg',
+    photo: 'images/bebidas/bebidas/drink4.webp',
     tagline: 'Colorida e borbulhante',
     description:
       'Água com gás e xarope aromático, servida bem gelada com folhas de hortelã — escolha o seu sabor favorito no seletor abaixo.',
@@ -14,7 +14,7 @@ export const drinks: MenuItem[] = [
   },
   {
     name: 'Spritz de Frutas',
-    photo: 'images/bebidas/bebidas/drink3.jpg',
+    photo: 'images/bebidas/bebidas/drink3.webp',
     tagline: 'Refrescante e aromático',
     description:
       'Drink sem álcool com toque cítrico, alecrim e um garnish de abacaxi — leve, borbulhante e cheio de sabor.',
@@ -24,7 +24,7 @@ export const drinks: MenuItem[] = [
   },
   {
     name: 'Chá Gelado Especial',
-    photo: 'images/bebidas/bebidas/drink2.jpg',
+    photo: 'images/bebidas/bebidas/drink2.webp',
     tagline: 'Encorpado e aromático',
     description:
       'Chá preto gelado com toque de frutas e finalizado com folhas de hortelã fresca — encorpado, equilibrado e refrescante.',
@@ -34,7 +34,7 @@ export const drinks: MenuItem[] = [
   },
   {
     name: 'Refresco de Morango',
-    photo: 'images/bebidas/bebidas/drinkmorango.jpg',
+    photo: 'images/bebidas/bebidas/drinkmorango.webp',
     tagline: 'Doce e cheio de fruta',
     description:
       'Morangos frescos triturados com água gelada e um toque de açúcar — a cara do verão em um copo.',
