@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm run test:ci
+
+      - name: Build para o GitHub Pages
+        run: npx ng build --base-href /${{ github.event.repository.name }}/
+
+      # O GitHub Pages não conhece as rotas do Angular: servir o index.html no 404
+      # faz /perfil funcionar ao recarregar a página.
+      - run: cp dist/padaria-landing/browser/index.html dist/padaria-landing/browser/404.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/padaria-landing/browser
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
