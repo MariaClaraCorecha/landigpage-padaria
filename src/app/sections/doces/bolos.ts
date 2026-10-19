@@ -3,7 +3,7 @@ import { MenuItem } from '../../shared/menu-item';
 export const bolos: MenuItem[] = [
   {
     name: 'Bolo de Chocolate',
-    photo: 'images/doces/bolos/bolo_chocolate.jpg',
+    photo: 'images/doces/bolos/bolo_chocolate.webp',
     tagline: 'Intenso e irresistível',
     description:
       'Camadas macias de chocolate com cacau 70% e um toque de café, recheio cremoso de chocolate ao leite e cobertura brilhante de chocolate amargo — um clássico que conquista à primeira mordida.',
@@ -13,7 +13,7 @@ export const bolos: MenuItem[] = [
   },
   {
     name: 'Bolo de Cenoura com Chocolate',
-    photo: 'images/doces/bolos/bolo_cenourachocolate.jpg',
+    photo: 'images/doces/bolos/bolo_cenourachocolate.webp',
     tagline: 'O combo perfeito',
     description:
       'Massa fofinha de cenoura com uma generosa cobertura de chocolate ao leite cremoso. Simples, afetivo e sempre gostoso.',
@@ -23,7 +23,7 @@ export const bolos: MenuItem[] = [
   },
   {
     name: 'Bolo de Coco',
-    photo: 'images/doces/bolos/bolo_coco.jpg',
+    photo: 'images/doces/bolos/bolo_coco.webp',
     tagline: 'Refrescante e aconchegante',
     description:
       'Massa leve com coco fresco, molhada com leite de coco e um toque de leite condensado, com coco ralado polvilhado por cima, para quem ama um doce suave e cheiroso.',
@@ -33,7 +33,7 @@ export const bolos: MenuItem[] = [
   },
   {
     name: 'Bolo de Laranja',
-    photo: 'images/doces/bolos/bolo_laranja.jpg',
+    photo: 'images/doces/bolos/bolo_laranja.webp',
     tagline: 'Charmoso e caramelizado',
     description:
       'Massa macia e úmida coberta por rodelas de laranja caramelizadas, com um brilho dourado de dar água na boca — tão bonito quanto gostoso.',
@@ -43,7 +43,7 @@ export const bolos: MenuItem[] = [
   },
   {
     name: 'Bolo Mármore',
-    photo: 'images/doces/bolos/bolo_marmore.jpg',
+    photo: 'images/doces/bolos/bolo_marmore.webp',
     tagline: 'O melhor dos dois mundos',
     description:
       'Massas de baunilha e chocolate mescladas em cada fatia, formando desenhos únicos e lindos.',
@@ -53,7 +53,7 @@ export const bolos: MenuItem[] = [
   },
   {
     name: 'Bolo de Morango',
-    photo: 'images/doces/bolos/bolo_morango.jpg',
+    photo: 'images/doces/bolos/bolo_morango.webp',
     tagline: 'Fresquinho e delicado',
     description:
       'Massa macia com morangos frescos, chocolate branco e chantilly, e um toque adocicado — leve, colorido e cheio de sabor em cada fatia.',
@@ -63,17 +63,17 @@ export const bolos: MenuItem[] = [
   },
   {
     name: 'Bolo Red Velvet',
-    photo: 'images/doces/bolos/bolo_redvelvet.jpg',
+    photo: 'images/doces/bolos/bolo_redvelvet.webp',
     tagline: 'Elegante e aveludado',
     description:
       'Massa aveludada com um toque de cacau e cobertura de cream cheese — sofisticado, macio e surpreendente.',
-    priceWhole: 'R$ 12,00',
-    priceSlice: 'R$ 200,00',
+    priceWhole: 'R$ 200,00',
+    priceSlice: 'R$ 12,00',
     ingredients: 'Cacau, cream cheese e chocolate branco',
   },
   {
     name: 'Cupcake',
-    photo: 'images/doces/bolos/cupcake.jpg',
+    photo: 'images/doces/bolos/cupcake.webp',
     tagline: 'Fofinho e cheio de cor',
     description:
       'Cupcake de massa de chocolate fofinha, coberto com um generoso chantilly colorido e finalizado com confeitos e granulados — perfeito para festas ou para adoçar o dia.',
@@ -85,7 +85,7 @@ export const bolos: MenuItem[] = [
   },
   {
     name: 'Brownie de Chocolate',
-    photo: 'images/doces/bolos/bolobrownie.jpg',
+    photo: 'images/doces/bolos/bolobrownie.webp',
     tagline: 'Denso, molhadinho e puro chocolate',
     description:
       'Brownie amanteigado com chocolate meio amargo, casquinha crocante por fora e recheio úmido por dentro — para quem não abre mão de um chocolate intenso.',
