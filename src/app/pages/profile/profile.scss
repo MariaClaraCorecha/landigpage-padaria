@@ -22,7 +22,7 @@ h1 {
   padding: 40px 24px;
   border-radius: var(--radius-lg);
   border: 1px dashed var(--color-gold);
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--color-surface-soft);
 
   mat-icon {
     font-size: 48px;
@@ -52,7 +52,7 @@ h1 {
   gap: 16px;
   padding: 12px 16px;
   border-radius: var(--radius-lg);
-  background: #fff8f5;
+  background: var(--color-surface);
   box-shadow: var(--shadow-soft);
   transition: box-shadow 0.25s ease;
 
@@ -144,7 +144,7 @@ h1 {
   margin-top: 20px;
   padding: 8px 0;
   background-color: var(--color-chocolate);
-  color: var(--color-gold-light);
+  color: var(--color-beige);
 }
 
 .receipt {
@@ -156,7 +156,7 @@ h1 {
   align-items: center;
   text-align: center;
   border-radius: var(--radius-lg);
-  background: #fff8f5;
+  background: var(--color-surface);
   box-shadow: var(--shadow-soft);
 
   h2 {
@@ -176,7 +176,7 @@ h1 {
   a[mat-flat-button] {
     margin-top: 24px;
     background-color: var(--color-chocolate);
-    color: var(--color-gold-light);
+    color: var(--color-beige);
   }
 }
 
