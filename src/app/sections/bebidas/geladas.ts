@@ -3,7 +3,7 @@ import { MenuItem } from '../../shared/menu-item';
 export const geladas: MenuItem[] = [
   {
     name: 'Suco de Frutas Naturais',
-    photo: 'images/bebidas/bebidas/sucofrutas.jpg',
+    photo: 'images/bebidas/bebidas/sucofrutas.webp',
     tagline: 'Fresquinho e feito na hora',
     description:
       'Sucos naturais, sem adição de açúcar, batidos na hora e servidos bem gelados. Escolha o seu sabor favorito no seletor abaixo.',
@@ -14,7 +14,7 @@ export const geladas: MenuItem[] = [
   },
   {
     name: 'Milkshake',
-    photo: 'images/bebidas/bebidas/milkshake.jpg',
+    photo: 'images/bebidas/bebidas/milkshake.webp',
     tagline: 'Cremoso e generoso',
     description:
       'Milkshake bem cremoso, batido na hora e finalizado com uma cobertura especial. Escolha o seu sabor favorito no seletor abaixo.',
@@ -25,7 +25,7 @@ export const geladas: MenuItem[] = [
   },
   {
     name: 'Coca Cola',
-    photo: 'images/bebidas/bebidas/refrigerante.jpg',
+    photo: 'images/bebidas/bebidas/refrigerante.webp',
     tagline: 'Geladinho na medida certa',
     description:
       'Refrigerante servido bem gelado para acompanhar seu lanche. Escolha o seu sabor favorito no seletor abaixo.',
@@ -36,7 +36,7 @@ export const geladas: MenuItem[] = [
   },
   {
     name: 'Água Mineral',
-    photo: 'images/bebidas/bebidas/agua.jpg',
+    photo: 'images/bebidas/bebidas/agua.webp',
     tagline: 'Simples e essencial',
     description: 'Água mineral gelada, com ou sem gás, para matar a sede a qualquer hora.',
     priceWhole: 'R$ 2,00',
