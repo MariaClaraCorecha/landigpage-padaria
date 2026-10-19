@@ -58,7 +58,9 @@ export class ProductCard {
   }
 
   addToCart(priceType: PriceType): void {
-    const flavor = this.isMultiFlavor() ? this.selectedFlavorsLabel() || undefined : this.selectedFlavor();
+    const flavor = this.isMultiFlavor()
+      ? this.selectedFlavorsLabel() || undefined
+      : this.selectedFlavor();
     this.cart.add(this.item(), priceType, flavor);
     const ref = this.snackBar.open(`${this.item().name} adicionado à cestinha`, 'Ver cestinha', {
       duration: 2500,
