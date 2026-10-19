@@ -28,9 +28,7 @@ export class Cart {
 
   readonly items = this.lines.asReadonly();
 
-  readonly itemCount = computed(() =>
-    this.lines().reduce((sum, line) => sum + line.quantity, 0),
-  );
+  readonly itemCount = computed(() => this.lines().reduce((sum, line) => sum + line.quantity, 0));
 
   readonly total = computed(() =>
     this.lines().reduce((sum, line) => sum + this.unitPrice(line) * line.quantity, 0),
