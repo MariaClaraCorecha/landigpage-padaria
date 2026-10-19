@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { ProductCard } from '../product-card/product-card';
 import { MenuItem } from '../menu-item';
@@ -8,6 +8,7 @@ import { MenuItem } from '../menu-item';
   imports: [MatIconModule, ProductCard],
   templateUrl: './menu-subsection.html',
   styleUrl: './menu-subsection.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuSubsection {
   readonly icon = input.required<string>();
