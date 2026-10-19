@@ -18,6 +18,30 @@
   --radius-lg: 20px;
   --shadow-soft: 0 14px 32px -18px rgba(75, 46, 34, 0.45);
   --shadow-soft-hover: 0 20px 40px -16px rgba(75, 46, 34, 0.55);
+
+  --color-surface: #fff8f5;
+  --color-surface-soft: rgba(255, 255, 255, 0.4);
+  --color-glow: rgba(234, 190, 154, 0.4);
+  // Header, footer and toasts stay chocolate in both themes.
+  --color-bar: #4b2e22;
+  --gradient-bar: linear-gradient(160deg, #4b2e22 0%, #3a2116 100%);
+
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --color-chocolate: #f3dcc6;
+  --color-beige: #1c1310;
+  --color-pink-text: #f4b8cd;
+  --color-pink-text-light: #a8496a;
+  --color-surface: #2a1d18;
+  --color-surface-soft: rgba(255, 255, 255, 0.04);
+  --color-glow: rgba(205, 163, 129, 0.14);
+  --shadow-soft: 0 14px 32px -18px rgba(0, 0, 0, 0.7);
+  --shadow-soft-hover: 0 20px 40px -16px rgba(0, 0, 0, 0.8);
+  --gradient-bar: linear-gradient(160deg, #2e1b13 0%, #1f120c 100%);
+
+  color-scheme: dark;
 }
 
 html {
@@ -36,14 +60,9 @@ html {
 }
 
 body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
-  color-scheme: light;
-
+  // color-scheme is set on :root by the Theme service so Material's light-dark() tokens follow it.
   background:
-    radial-gradient(1100px 520px at 50% -8%, rgba(234, 190, 154, 0.4), transparent 60%),
-    var(--color-beige);
+    radial-gradient(1100px 520px at 50% -8%, var(--color-glow), transparent 60%), var(--color-beige);
   color: var(--color-pink-text);
   font: var(--mat-sys-body-medium);
   line-height: 1.6;
@@ -51,7 +70,16 @@ body {
 
   // Reset the user agent margin.
   margin: 0;
-  height: 100%;
+  min-height: 100%;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 h1,
@@ -77,7 +105,7 @@ mat-card-title {
 }
 
 .app-snackbar {
-  --mdc-snackbar-container-color: var(--color-chocolate);
+  --mdc-snackbar-container-color: var(--color-bar);
   --mdc-snackbar-supporting-text-color: var(--color-gold-light);
   --mat-snack-bar-button-color: var(--color-gold);
 }
