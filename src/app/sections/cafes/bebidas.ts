@@ -3,7 +3,7 @@ import { MenuItem } from '../../shared/menu-item';
 export const bebidas: MenuItem[] = [
   {
     name: 'Café Preto',
-    photo: 'images/bebidas/cafes/cafepreto.jpg',
+    photo: 'images/bebidas/cafes/cafepreto.webp',
     tagline: 'Puro e encorpado',
     description:
       'Café passado na hora, forte e aromático, servido bem quente — perfeito para começar o dia ou acompanhar um docinho.',
@@ -13,7 +13,7 @@ export const bebidas: MenuItem[] = [
   },
   {
     name: 'Cappuccino',
-    photo: 'images/bebidas/cafes/cappuccino.jpg',
+    photo: 'images/bebidas/cafes/cappuccino.webp',
     tagline: 'Cremoso com espuma de leite',
     description:
       'Café espresso equilibrado com leite vaporizado e uma espuma macia finalizada em desenho — cremoso do primeiro ao último gole.',
@@ -23,7 +23,7 @@ export const bebidas: MenuItem[] = [
   },
   {
     name: 'Mocaccino',
-    photo: 'images/bebidas/cafes/mocaccino.jpg',
+    photo: 'images/bebidas/cafes/mocaccino.webp',
     tagline: 'Café e chocolate em camadas',
     description:
       'Espresso, chocolate cremoso e leite em camadas, coberto com chantilly e cacau em pó — uma sobremesa em forma de bebida.',
@@ -33,7 +33,7 @@ export const bebidas: MenuItem[] = [
   },
   {
     name: 'Chocolate Quente',
-    photo: 'images/bebidas/cafes/chocolatequente.jpg',
+    photo: 'images/bebidas/cafes/chocolatequente.webp',
     tagline: 'Intenso e reconfortante',
     description:
       'Chocolate cremoso derretido lentamente, servido bem quente — um clássico para os dias mais frios.',
@@ -43,7 +43,7 @@ export const bebidas: MenuItem[] = [
   },
   {
     name: 'Xícara de Leite',
-    photo: 'images/bebidas/cafes/xicara_leite.jpg',
+    photo: 'images/bebidas/cafes/xicara_leite.webp',
     tagline: 'Simples e aconchegante',
     description: 'Leite quente e cremoso, ideal para acompanhar pães e bolos do café da manhã.',
     priceWhole: 'R$ 5,00',
@@ -52,7 +52,7 @@ export const bebidas: MenuItem[] = [
   },
   {
     name: 'Matcha Latte',
-    photo: 'images/bebidas/cafes/macha.jpg',
+    photo: 'images/bebidas/cafes/macha.webp',
     tagline: 'Refrescante e diferente',
     description:
       'Chá verde matcha batido com leite vaporizado, resultando em uma bebida cremosa, leve e com um verde vibrante.',
