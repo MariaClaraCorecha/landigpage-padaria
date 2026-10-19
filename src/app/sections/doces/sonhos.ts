@@ -15,7 +15,8 @@ export const sonhos: MenuItem[] = [
     name: 'Sonho de Creme',
     photo: 'images/doces/sonhos/sonho_creme.jpg',
     tagline: 'Macio e generoso',
-    description: 'Massa macia recheada com bastante creme de confeiteiro, finalizada com açúcar por cima.',
+    description:
+      'Massa macia recheada com bastante creme de confeiteiro, finalizada com açúcar por cima.',
     priceWhole: 'R$ 7,00',
     priceWholeLabel: 'Unidade',
     ingredients: 'Creme de confeiteiro e açúcar',
