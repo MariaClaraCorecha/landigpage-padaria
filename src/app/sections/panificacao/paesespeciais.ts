@@ -3,7 +3,7 @@ import { MenuItem } from '../../shared/menu-item';
 export const paesespeciais: MenuItem[] = [
   {
     name: 'Trança de Avelã',
-    photo: 'images/panificacao/paoavela.jpg',
+    photo: 'images/panificacao/paoavela.webp',
     tagline: 'Macia e cheia de sabor',
     description:
       'Massa macia trançada com um generoso recheio de avelã, finalizada com avelãs picadas por cima — perfeita para o café da tarde.',
@@ -13,7 +13,7 @@ export const paesespeciais: MenuItem[] = [
   },
   {
     name: 'Pão Brioche',
-    photo: 'images/panificacao/pao7.jpg',
+    photo: 'images/panificacao/pao7.webp',
     tagline: 'Amanteigado e levemente adocicado',
     description:
       'Pão trançado amanteigado, pincelado com ovo e finalizado com gergelim — miolo fofinho e levemente adocicado.',
@@ -23,7 +23,7 @@ export const paesespeciais: MenuItem[] = [
   },
   {
     name: 'Rosca de Amêndoas',
-    photo: 'images/panificacao/pao8.jpg',
+    photo: 'images/panificacao/pao8.webp',
     tagline: 'Festiva e crocante',
     description:
       'Massa trançada em formato de rosca, coberta com lascas de amêndoas tostadas — bonita o bastante para qualquer ocasião especial.',
@@ -33,7 +33,7 @@ export const paesespeciais: MenuItem[] = [
   },
   {
     name: 'Pão Sírio',
-    photo: 'images/panificacao/pao9.jpg',
+    photo: 'images/panificacao/pao9.webp',
     tagline: 'Fininho e versátil',
     description:
       'Pão sírio fininho e macio, perfeito para sanduíches, wraps ou para acompanhar patês e homus.',
@@ -45,7 +45,7 @@ export const paesespeciais: MenuItem[] = [
   },
   {
     name: 'Rolinho de Canela',
-    photo: 'images/panificacao/paorolocanela.jpg',
+    photo: 'images/panificacao/paorolocanela.webp',
     tagline: 'Docinho e aromático',
     description:
       'Rolinhos de massa fofinha enrolados com canela e açúcar, finalizados com uma leve camada de açúcar de confeiteiro.',
@@ -57,7 +57,7 @@ export const paesespeciais: MenuItem[] = [
   },
   {
     name: 'Coroa Decorada',
-    photo: 'images/panificacao/pao13.jpg',
+    photo: 'images/panificacao/pao13.webp',
     tagline: 'Peça especial para ocasiões festivas',
     description:
       'Pão trabalhado à mão em formato de coroa, com detalhes esculpidos na massa — uma peça decorativa para compor a mesa em ocasiões especiais.',
