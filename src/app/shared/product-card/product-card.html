@@ -1,5 +1,5 @@
 <mat-card class="product-card" appearance="outlined">
-  <img mat-card-image [src]="item().photo" [alt]="item().name" loading="lazy" />
+  <img mat-card-image [src]="item().photo" [alt]="item().name" loading="lazy" decoding="async" />
   <mat-card-header>
     <mat-card-title>{{ item().name }}</mat-card-title>
     <mat-card-subtitle>{{ item().tagline }}</mat-card-subtitle>
