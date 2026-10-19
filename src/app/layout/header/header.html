@@ -7,6 +7,15 @@
     </span>
     <button
       mat-icon-button
+      class="theme-button"
+      (click)="theme.toggle()"
+      [attr.aria-label]="isDark() ? 'Ativar modo claro' : 'Ativar modo escuro'"
+      [matTooltip]="isDark() ? 'Modo claro' : 'Modo escuro'"
+    >
+      <mat-icon>{{ isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
+    <button
+      mat-icon-button
       class="cart-button"
       routerLink="/perfil"
       aria-label="Ver minha cestinha"

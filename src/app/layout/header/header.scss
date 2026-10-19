@@ -1,6 +1,13 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 .header {
   height: auto;
-  background: linear-gradient(160deg, var(--color-chocolate) 0%, #3a2116 100%);
+  background: var(--gradient-bar);
   color: var(--color-gold-light);
   box-shadow: 0 6px 24px rgba(26, 14, 8, 0.35);
   position: relative;
@@ -56,8 +63,13 @@
   letter-spacing: 0.02em;
 }
 
-.cart-button {
+.theme-button {
   margin-left: auto;
+  align-self: center;
+  color: var(--color-gold-light);
+}
+
+.cart-button {
   align-self: center;
   color: var(--color-gold-light);
 }
