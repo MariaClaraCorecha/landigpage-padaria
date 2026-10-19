@@ -21,8 +21,8 @@ export class Profile {
 
   variantLabel(line: CartLine): string {
     return line.priceType === 'whole'
-      ? line.item.priceWholeLabel ?? 'Inteiro'
-      : line.item.priceSliceLabel ?? 'Fatia';
+      ? (line.item.priceWholeLabel ?? 'Inteiro')
+      : (line.item.priceSliceLabel ?? 'Fatia');
   }
 
   increment(line: CartLine): void {

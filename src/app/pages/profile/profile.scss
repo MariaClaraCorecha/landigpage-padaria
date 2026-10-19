@@ -109,7 +109,9 @@ h1 {
 .remove-button {
   color: var(--color-pink-text);
   opacity: 0.6;
-  transition: color 0.2s ease, opacity 0.2s ease;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
 
   &:hover {
     color: #ba1a1a;
