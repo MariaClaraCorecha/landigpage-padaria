@@ -3,7 +3,7 @@ import { MenuItem } from '../../shared/menu-item';
 export const salgados: MenuItem[] = [
   {
     name: 'Pãozinho Folheado',
-    photo: 'images/folheados/paonzinhofolheado.jpg',
+    photo: 'images/folheados/paonzinhofolheado.webp',
     tagline: 'Leve e amanteigado',
     description:
       'Pãozinho de massa folhada, macio por dentro e levemente crocante por fora, com um brilho dourado de dar água na boca — ótimo puro ou recheado.',
@@ -15,7 +15,7 @@ export const salgados: MenuItem[] = [
   },
   {
     name: 'Rolinho de Massa Folheada com Bacon e Queijo',
-    photo: 'images/folheados/rolinhosdemassafolheada.jpg',
+    photo: 'images/folheados/rolinhosdemassafolheada.webp',
     tagline: 'Salgado e cheio de sabor',
     description:
       'Massa folhada enrolada com recheio cremoso de queijo e pedacinhos de bacon, assada até dourar — perfeita para o café da tarde ou para servir em festas.',
