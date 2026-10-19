@@ -14,7 +14,8 @@
             <div class="info">
               <span class="name">{{ line.item.name }}</span>
               <span class="variant">
-                {{ line.quantity }}x {{ variantLabel(line) }}{{ line.flavor ? ' · ' + line.flavor : '' }}
+                {{ line.quantity }}x {{ variantLabel(line)
+                }}{{ line.flavor ? ' · ' + line.flavor : '' }}
               </span>
             </div>
             <span class="subtotal">{{ formatCurrency(subtotal(line)) }}</span>
