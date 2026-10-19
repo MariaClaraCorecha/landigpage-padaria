@@ -3,6 +3,8 @@
   margin: 0 auto;
   padding: 40px 16px;
   text-align: center;
+  // Keep section titles visible below the sticky header when jumping from the nav.
+  scroll-margin-top: 112px;
 }
 
 .menu-section h2 {
