@@ -3,7 +3,7 @@ import { MenuItem } from '../../shared/menu-item';
 export const sonhos: MenuItem[] = [
   {
     name: 'Sonho Tradicional',
-    photo: 'images/doces/sonhos/sonho_tradicional.jpg',
+    photo: 'images/doces/sonhos/sonho_tradicional.webp',
     tagline: 'O clássico da padaria',
     description:
       'Massa fofinha recheada com creme de confeiteiro e finalizada com uma generosa camada de açúcar de confeiteiro.',
@@ -13,7 +13,7 @@ export const sonhos: MenuItem[] = [
   },
   {
     name: 'Sonho de Creme',
-    photo: 'images/doces/sonhos/sonho_creme.jpg',
+    photo: 'images/doces/sonhos/sonho_creme.webp',
     tagline: 'Macio e generoso',
     description:
       'Massa macia recheada com bastante creme de confeiteiro, finalizada com açúcar por cima.',
@@ -23,7 +23,7 @@ export const sonhos: MenuItem[] = [
   },
   {
     name: 'Sonho de Chocolate',
-    photo: 'images/doces/sonhos/sonho_chocolate.jpg',
+    photo: 'images/doces/sonhos/sonho_chocolate.webp',
     tagline: 'Cremoso e irresistível',
     description:
       'Recheado com creme de confeiteiro e finalizado com uma generosa cobertura de chocolate ao leite e chocolate branco.',
@@ -33,7 +33,7 @@ export const sonhos: MenuItem[] = [
   },
   {
     name: 'Sonho de Frutas Vermelhas',
-    photo: 'images/doces/sonhos/sonho_frutasvermelhas.jpg',
+    photo: 'images/doces/sonhos/sonho_frutasvermelhas.webp',
     tagline: 'Docinho e frutado',
     description:
       'Massa fofinha recheada com geleia de frutas vermelhas, finalizada com açúcar de confeiteiro por cima.',
