@@ -3,7 +3,7 @@ import { MenuItem } from '../../shared/menu-item';
 export const paesdodia: MenuItem[] = [
   {
     name: 'Pão Francês',
-    photo: 'images/panificacao/pao3.jpg',
+    photo: 'images/panificacao/pao3.webp',
     tagline: 'Crocante por fora, fofinho por dentro',
     description:
       'O clássico pãozinho de todo dia, assado várias vezes ao longo do dia para sair sempre quentinho e crocante do forno.',
@@ -15,7 +15,7 @@ export const paesdodia: MenuItem[] = [
   },
   {
     name: 'Baguete Artesanal',
-    photo: 'images/panificacao/pao4.jpg',
+    photo: 'images/panificacao/pao4.webp',
     tagline: 'Casquinha crocante e miolo aerado',
     description:
       'Baguete de fermentação longa, com casca crocante e alveolada, assada em forno de lenha até ficar bem dourada.',
@@ -25,7 +25,7 @@ export const paesdodia: MenuItem[] = [
   },
   {
     name: 'Pão Italiano',
-    photo: 'images/panificacao/pao5.jpg',
+    photo: 'images/panificacao/pao5.webp',
     tagline: 'Rústico e de casca grossa',
     description:
       'Pão de fermentação natural com casca grossa e crocante, miolo macio e levemente ácido — perfeito para acompanhar qualquer refeição.',
@@ -35,7 +35,7 @@ export const paesdodia: MenuItem[] = [
   },
   {
     name: 'Pão Integral',
-    photo: 'images/panificacao/paointegral.jpg',
+    photo: 'images/panificacao/paointegral.webp',
     tagline: 'Leve e nutritivo',
     description:
       'Pão de forma feito com farinha integral, macio por dentro e com uma casquinha dourada — uma opção mais leve para o dia a dia.',
@@ -45,7 +45,7 @@ export const paesdodia: MenuItem[] = [
   },
   {
     name: 'Filão de Fermentação Natural',
-    photo: 'images/panificacao/pao6.jpg',
+    photo: 'images/panificacao/pao6.webp',
     tagline: 'Casca escura e bem crocante',
     description:
       'Filão de longa fermentação natural, com casca escura e crocante e miolo bem alveolado — para quem gosta de um pão mais rústico.',
@@ -55,7 +55,7 @@ export const paesdodia: MenuItem[] = [
   },
   {
     name: 'Pão Caseiro',
-    photo: 'images/panificacao/paocaseiro.jpg',
+    photo: 'images/panificacao/paocaseiro.webp',
     tagline: 'Macio como o de casa da vó',
     description:
       'Pãezinhos caseiros, dourados por fora e fofinhos por dentro — feitos do jeitinho tradicional, direto do forno de casa.',
@@ -67,7 +67,7 @@ export const paesdodia: MenuItem[] = [
   },
   {
     name: 'Pão de Centeio',
-    photo: 'images/panificacao/pao12.jpg',
+    photo: 'images/panificacao/pao12.webp',
     tagline: 'Denso e de sabor marcante',
     description:
       'Pão rústico de centeio, com miolo denso e levemente ácido e casca crocante — um clássico para acompanhar queijos e embutidos.',
@@ -77,7 +77,7 @@ export const paesdodia: MenuItem[] = [
   },
   {
     name: 'Pãozinho Australiano',
-    photo: 'images/panificacao/pao14.jpg',
+    photo: 'images/panificacao/pao14.webp',
     tagline: 'Casca escura e sabor adocicado',
     description:
       'Pãozinho de casca escura e brilhante com um leve toque adocicado, miolo macio — ótimo puro ou para sanduíches.',
@@ -89,7 +89,7 @@ export const paesdodia: MenuItem[] = [
   },
   {
     name: 'Pão de Forma',
-    photo: 'images/panificacao/pao10.jpg',
+    photo: 'images/panificacao/pao10.webp',
     tagline: 'Fatiado e pronto para o sanduíche',
     description:
       'Pão de forma tradicional, já fatiado e macio, perfeito para sanduíches, torradas ou para acompanhar o café da manhã.',
@@ -99,7 +99,7 @@ export const paesdodia: MenuItem[] = [
   },
   {
     name: 'Ciabatta',
-    photo: 'images/panificacao/ciabatta.jpg',
+    photo: 'images/panificacao/ciabatta.webp',
     tagline: 'Casca fina e miolo bem aerado',
     description:
       'Pão italiano de casca fina e farinhada, com miolo bem aerado e cheio de buracos — ótimo para sanduíches ou para acompanhar azeite.',
@@ -109,7 +109,7 @@ export const paesdodia: MenuItem[] = [
   },
   {
     name: 'Pão de Leite',
-    photo: 'images/panificacao/pao11.jpg',
+    photo: 'images/panificacao/pao11.webp',
     tagline: 'Fofinho e levemente adocicado',
     description:
       'Pãezinhos fofinhos e macios, pincelados com leite e mel para ficarem bem dourados e brilhantes — ótimos com manteiga.',
