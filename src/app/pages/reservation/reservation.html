@@ -24,6 +24,12 @@
           <dt><mat-icon>group</mat-icon> Mesa para</dt>
           <dd>{{ guestsLabel(booking.guests) }} · {{ areaLabel(booking.area) }}</dd>
         </div>
+        @if (booking.table) {
+          <div>
+            <dt><mat-icon>table_restaurant</mat-icon> Mesa</dt>
+            <dd>{{ tableLabel(booking) }}</dd>
+          </div>
+        }
         @if (booking.notes) {
           <div>
             <dt><mat-icon>edit_note</mat-icon> Observações</dt>
@@ -142,6 +148,21 @@
         <span class="area-hint" id="area-hint">Onde prefere sentar?</span>
       </div>
 
+      <div class="table-field full-width">
+        <app-table-map
+          formControlName="table"
+          [area]="selectedArea()"
+          [guests]="selectedGuests()"
+          [taken]="takenTables()"
+          [locked]="!form.controls.time.value"
+        />
+        @if (form.controls.table.invalid && form.controls.table.touched) {
+          <p class="table-error" role="alert">
+            <mat-icon>error</mat-icon> Escolha uma mesa livre no mapa.
+          </p>
+        }
+      </div>
+
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Observações</mat-label>
         <textarea
@@ -175,7 +196,11 @@
           <div class="info">
             <span class="name">{{ formatDay(booking.date) }} · {{ booking.time }}</span>
             <span class="variant">
-              {{ guestsLabel(booking.guests) }} · {{ areaLabel(booking.area) }} · nº
+              {{ guestsLabel(booking.guests) }} · {{ areaLabel(booking.area) }}
+              @if (booking.table) {
+                · mesa {{ booking.table }}
+              }
+              · nº
               {{ booking.code }}
             </span>
           </div>

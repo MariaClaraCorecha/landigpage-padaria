@@ -47,6 +47,9 @@ describe('ReservationPage', () => {
     fixture.componentInstance['form'].controls.time.setValue(availableTimes(date)[0]);
     await fixture.whenStable();
 
+    element.querySelector<HTMLButtonElement>('app-table-map button.free')!.click();
+    await fixture.whenStable();
+
     element.querySelector<HTMLButtonElement>('button[type="submit"]')!.click();
     await fixture.whenStable();
     return element;
@@ -56,7 +59,29 @@ describe('ReservationPage', () => {
     const element = await fillAndSubmit();
 
     expect(element.querySelector('.confirmation')).not.toBeNull();
-    expect(TestBed.inject(Reservations).upcoming()).toHaveLength(1);
+    expect(TestBed.inject(Reservations).upcoming()[0].table).toEqual(expect.any(Number));
+  });
+
+  it('exige uma mesa escolhida no mapa', async () => {
+    const fixture = TestBed.createComponent(ReservationPage);
+    await fixture.whenStable();
+    const element: HTMLElement = fixture.nativeElement;
+
+    element.querySelector<HTMLButtonElement>('button[type="submit"]')!.click();
+    await fixture.whenStable();
+
+    expect(element.querySelector('.table-error')?.textContent).toContain('Escolha uma mesa');
+    expect(element.querySelector('.confirmation')).toBeNull();
+  });
+
+  it('libera a mesa escolhida ao trocar de área', () => {
+    const fixture = TestBed.createComponent(ReservationPage);
+    const form = fixture.componentInstance['form'];
+    form.controls.table.setValue(4);
+
+    form.controls.area.setValue('varanda');
+
+    expect(form.controls.table.value).toBeNull();
   });
 
   it('registra mesmo com reservas antigas inválidas no localStorage', async () => {

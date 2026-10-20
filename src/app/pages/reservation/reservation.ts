@@ -1,5 +1,6 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { merge } from 'rxjs';
 import {
   AbstractControl,
   FormBuilder,
@@ -26,6 +27,8 @@ import {
   fromIsoDate,
   maxReservationDate,
 } from '../../shared/reservations';
+import { findTable, tableFit } from '../../shared/tables';
+import { TableMap } from './table-map/table-map';
 
 const MAX_GUESTS = 10;
 const NOTES_MAX_LENGTH = 200;
@@ -48,6 +51,7 @@ function phoneValidator(control: AbstractControl<string>): ValidationErrors | nu
     MatIconModule,
     MatInputModule,
     MatSelectModule,
+    TableMap,
   ],
   templateUrl: './reservation.html',
   styleUrl: './reservation.scss',
@@ -69,6 +73,7 @@ export class ReservationPage {
     time: ['', Validators.required],
     guests: [2, Validators.required],
     area: ['salao' as SeatingArea, Validators.required],
+    table: this.fb.control<number | null>(null, Validators.required),
     notes: ['', Validators.maxLength(NOTES_MAX_LENGTH)],
   });
 
@@ -78,6 +83,21 @@ export class ReservationPage {
   protected readonly times = computed(() => {
     const date = this.selectedDate();
     return date ? availableTimes(date) : [];
+  });
+
+  private readonly selectedTime = toSignal(this.form.controls.time.valueChanges, {
+    initialValue: '',
+  });
+  protected readonly selectedArea = toSignal(this.form.controls.area.valueChanges, {
+    initialValue: this.form.controls.area.value,
+  });
+  protected readonly selectedGuests = toSignal(this.form.controls.guests.valueChanges, {
+    initialValue: this.form.controls.guests.value,
+  });
+  protected readonly takenTables = computed(() => {
+    const date = this.selectedDate();
+    const time = this.selectedTime();
+    return date && time ? this.reservations.takenTables(date, time) : new Set<number>();
   });
 
   protected readonly dateFilter = (date: Date | null): boolean =>
@@ -91,6 +111,19 @@ export class ReservationPage {
       const time = this.form.controls.time;
       if (time.value && !this.times().includes(time.value)) time.reset();
     });
+
+    const { area, guests, date, time, table } = this.form.controls;
+    merge(area.valueChanges, guests.valueChanges, date.valueChanges, time.valueChanges).subscribe(
+      () => {
+        const chosen = findTable(table.value);
+        const stillFree =
+          chosen &&
+          chosen.area === area.value &&
+          tableFit(chosen, guests.value) === 'ok' &&
+          !this.takenTables().has(chosen.number);
+        if (table.value !== null && !stillFree) table.reset();
+      },
+    );
   }
 
   submit(): void {
@@ -98,8 +131,8 @@ export class ReservationPage {
       this.form.markAllAsTouched();
       return;
     }
-    const { date, ...request } = this.form.getRawValue();
-    this.confirmed.set(this.reservations.book({ ...request, date: date! }));
+    const { date, table, ...request } = this.form.getRawValue();
+    this.confirmed.set(this.reservations.book({ ...request, date: date!, table: table! }));
     this.form.reset();
   }
 
@@ -119,6 +152,11 @@ export class ReservationPage {
 
   areaLabel(area: SeatingArea): string {
     return SEATING_AREA_LABELS[area];
+  }
+
+  tableLabel(booking: Reservation): string {
+    const table = findTable(booking.table);
+    return table ? `nº ${table.number} · ${table.description}` : this.areaLabel(booking.area);
   }
 
   guestsLabel(guests: number): string {

@@ -115,6 +115,25 @@ h1 {
   line-height: 20px;
 }
 
+.table-field {
+  margin: 12px 0 8px;
+}
+
+.table-error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0 0;
+  color: var(--mat-sys-error);
+  font: var(--mat-sys-body-small);
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
 .submit-button {
   display: flex;
   align-items: center;
