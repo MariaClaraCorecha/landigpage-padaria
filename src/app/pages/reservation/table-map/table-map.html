@@ -1,0 +1,85 @@
+<ul class="legend" aria-hidden="true">
+  <li><span class="swatch free"></span> Livre</li>
+  <li><span class="swatch selected"></span> Sua mesa</li>
+  <li><span class="swatch taken"></span> Ocupada</li>
+  <li><span class="swatch unfit"></span> Não comporta o grupo</li>
+</ul>
+
+<div
+  class="plan"
+  [class]="area()"
+  role="group"
+  [attr.aria-label]="area() === 'salao' ? 'Mapa de mesas do salão' : 'Mapa de mesas da varanda'"
+>
+  @if (area() === 'salao') {
+    <div class="decor counter" aria-hidden="true"><mat-icon>coffee</mat-icon> Balcão</div>
+    <div class="decor windows" aria-hidden="true"></div>
+    <div class="decor door bottom" aria-hidden="true"><mat-icon>door_front</mat-icon> Entrada</div>
+  } @else {
+    <div class="decor door top" aria-hidden="true"><mat-icon>door_sliding</mat-icon> Salão</div>
+    <span class="decor garden" aria-hidden="true">Jardim</span>
+  }
+
+  @for (item of decor(); track $index) {
+    <mat-icon
+      class="decor"
+      [class]="item.kind"
+      [style.left.%]="item.x"
+      [style.top.%]="item.y"
+      aria-hidden="true"
+      >{{ item.icon }}</mat-icon
+    >
+  }
+
+  @for (spot of spots(); track spot.table.number) {
+    <div
+      class="spot"
+      [class]="spot.table.shape"
+      [style.left.%]="spot.table.x"
+      [style.top.%]="spot.table.y"
+      [style.width.%]="spot.table.width"
+      [style.aspect-ratio]="spot.table.ratio"
+    >
+      @for (chair of spot.chairs; track $index) {
+        <span
+          class="chair"
+          [class]="spot.status"
+          [style.left]="chair.left"
+          [style.top]="chair.top"
+        ></span>
+      }
+      <button
+        mat-flat-button
+        type="button"
+        class="table"
+        [class]="spot.status"
+        [disabled]="spot.status !== 'free' && spot.status !== 'selected'"
+        disabledInteractive
+        [attr.aria-pressed]="spot.status === 'selected'"
+        [attr.aria-label]="describe(spot.table, spot.status)"
+        [matTooltip]="describe(spot.table, spot.status)"
+        [matTooltipDisabled]="spot.status === 'locked'"
+        (click)="select(spot.table, spot.status)"
+      >
+        {{ spot.table.number }}
+      </button>
+    </div>
+  }
+
+  @if (locked()) {
+    <div class="locked-overlay">
+      <mat-icon>event</mat-icon>
+      Escolha a data e o horário para ver as mesas livres.
+    </div>
+  }
+</div>
+
+<p class="status" aria-live="polite">
+  @if (selected(); as spot) {
+    <mat-icon>check_circle</mat-icon>
+    <strong>Mesa {{ spot.table.number }}</strong> · {{ spot.table.seats }} lugares ·
+    {{ spot.table.description }}
+  } @else if (!locked()) {
+    Toque em uma mesa livre para escolher.
+  }
+</p>
