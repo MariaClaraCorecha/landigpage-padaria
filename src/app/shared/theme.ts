@@ -29,8 +29,7 @@ export class Theme {
       this.document.documentElement.dataset['theme'] = scheme;
       try {
         localStorage.setItem(STORAGE_KEY, scheme);
-      } catch {
-      }
+      } catch {}
     });
   }
 
