@@ -30,7 +30,6 @@ export class Theme {
       try {
         localStorage.setItem(STORAGE_KEY, scheme);
       } catch {
-        // Storage may be unavailable (private mode); the theme still applies for this visit.
       }
     });
   }
