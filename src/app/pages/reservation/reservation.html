@@ -72,16 +72,20 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Data</mat-label>
+        <mat-icon matPrefix>calendar_month</mat-icon>
         <input
           matInput
           formControlName="date"
           placeholder="dd/mm/aaaa"
+          (click)="picker.open()"
           [matDatepicker]="picker"
           [matDatepickerFilter]="dateFilter"
           [min]="minDate"
           [max]="maxDate"
         />
-        <mat-datepicker-toggle matIconSuffix [for]="picker" />
+        <mat-datepicker-toggle matIconSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>arrow_drop_down</mat-icon>
+        </mat-datepicker-toggle>
         <mat-datepicker #picker />
         @if (form.controls.date.hasError('matDatepickerParse')) {
           <mat-error>Data inválida. Use o formato dd/mm/aaaa.</mat-error>
@@ -123,25 +127,30 @@
       </mat-form-field>
 
       <div class="area-field">
-        <span class="area-label" id="area-label">Onde prefere sentar?</span>
         <mat-button-toggle-group
+          class="area-toggle"
           formControlName="area"
-          aria-labelledby="area-label"
+          aria-labelledby="area-hint"
           hideSingleSelectionIndicator
         >
           @for (area of areas; track area[0]) {
-            <mat-button-toggle [value]="area[0]">{{ area[1] }}</mat-button-toggle>
+            <mat-button-toggle [value]="area[0]">
+              <mat-icon>{{ area[0] === 'salao' ? 'chair' : 'deck' }}</mat-icon>
+              {{ area[1] }}
+            </mat-button-toggle>
           }
         </mat-button-toggle-group>
+        <span class="area-hint" id="area-hint">Onde prefere sentar?</span>
       </div>
 
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Observações</mat-label>
-        <mat-icon matPrefix>edit_note</mat-icon>
         <textarea
           matInput
           formControlName="notes"
-          rows="3"
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="3"
+          cdkAutosizeMaxRows="6"
           [maxlength]="notesMaxLength"
           placeholder="Aniversário, cadeirinha para bebê, acessibilidade…"
         ></textarea>

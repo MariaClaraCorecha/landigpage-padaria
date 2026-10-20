@@ -14,7 +14,8 @@
 
   @include mat.button-toggle-overrides(
     (
-      shape: 999px,
+      height: 56px,
+      shape: var(--mat-sys-corner-extra-small),
       divider-color: var(--color-gold),
       text-color: var(--color-chocolate),
       background-color: transparent,
@@ -30,6 +31,21 @@
       outlined-focus-outline-color: var(--color-chocolate),
       outlined-focus-label-text-color: var(--color-chocolate),
       leading-icon-color: var(--color-gold),
+      trailing-icon-color: var(--color-gold),
+    )
+  );
+
+  @include mat.select-overrides(
+    (
+      enabled-arrow-color: var(--color-gold),
+      focused-arrow-color: var(--color-chocolate),
+    )
+  );
+
+  @include mat.datepicker-overrides(
+    (
+      toggle-icon-color: var(--color-gold),
+      toggle-active-state-icon-color: var(--color-chocolate),
     )
   );
 }
@@ -56,6 +72,7 @@ h1 {
 .form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   column-gap: 16px;
   row-gap: 4px;
   padding: 24px;
@@ -68,17 +85,34 @@ h1 {
   grid-column: 1 / -1;
 }
 
+.form mat-icon[matPrefix] {
+  font-size: 20px;
+}
+
 .area-field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  // Lines the toggle up with the outlined fields beside it.
-  margin-bottom: 22px;
 }
 
-.area-label {
-  font-size: 0.85rem;
-  color: var(--color-chocolate);
+.area-toggle {
+  display: flex;
+  border-color: rgba(205, 163, 129, 0.6);
+
+  mat-button-toggle {
+    flex: 1;
+  }
+
+  mat-icon {
+    margin-right: 6px;
+    font-size: 20px;
+    vertical-align: middle;
+  }
+}
+
+.area-hint {
+  padding: 0 16px;
+  font: var(--mat-sys-body-small);
+  line-height: 20px;
 }
 
 .submit-button {

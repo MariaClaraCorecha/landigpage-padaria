@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -39,6 +40,7 @@ function phoneValidator(control: AbstractControl<string>): ValidationErrors | nu
   imports: [
     ReactiveFormsModule,
     RouterLink,
+    TextFieldModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatDatepickerModule,
