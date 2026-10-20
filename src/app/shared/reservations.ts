@@ -76,7 +76,6 @@ export function availableTimes(date: Date, now = new Date()): string[] {
   return times;
 }
 
-// Entries saved by older versions (or edited by hand) must not break the page.
 function isReservation(value: unknown): value is Reservation {
   if (typeof value !== 'object' || value === null) return false;
   const r = value as Record<string, unknown>;
