@@ -26,11 +26,10 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0&icon_names=add,bakery_dining,brunch_dining,cake,coffee,cookie,dark_mode,delete_outline,eco,grain,icecream,light_mode,liquor,local_drink,lunch_dining,pie_chart,remove,restaurant_menu,shopping_basket,task_alt&display=block"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0&icon_names=add,bakery_dining,brunch_dining,cake,calendar_month,call,close,coffee,cookie,dark_mode,delete_outline,eco,edit_note,event_available,grain,group,icecream,light_mode,liquor,local_drink,lunch_dining,person,pie_chart,remove,restaurant,restaurant_menu,schedule,shopping_basket,table_restaurant,takeout_dining,task_alt&display=block"
       rel="stylesheet"
     />
     <script>
-      // Apply the saved/system theme before Angular boots so the page doesn't flash light.
       try {
         var saved = localStorage.getItem('padaria:theme');
         var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
