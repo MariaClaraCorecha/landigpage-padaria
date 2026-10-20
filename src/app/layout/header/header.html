@@ -14,6 +14,15 @@
     >
       <mat-icon>{{ isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
     </button>
+    <a
+      mat-icon-button
+      class="reserve-button"
+      routerLink="/reservas"
+      aria-label="Reservar mesa"
+      matTooltip="Reservar mesa"
+    >
+      <mat-icon>table_restaurant</mat-icon>
+    </a>
     <button
       mat-icon-button
       class="cart-button"
