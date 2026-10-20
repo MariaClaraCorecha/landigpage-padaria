@@ -1,0 +1,186 @@
+<section class="reservation">
+  <h1><mat-icon>table_restaurant</mat-icon> Reservar Mesa</h1>
+  <p class="intro">
+    Garanta seu lugar para o café da manhã ou o lanche da tarde. Aceitamos reservas com até 30 dias
+    de antecedência.
+  </p>
+
+  @if (confirmed(); as booking) {
+    <div class="confirmation" role="status">
+      <mat-icon class="confirmation-icon">event_available</mat-icon>
+      <h2>Mesa reservada!</h2>
+      <p class="confirmation-meta">Reserva nº {{ booking.code }} · {{ booking.name }}</p>
+
+      <dl class="details">
+        <div>
+          <dt><mat-icon>calendar_month</mat-icon> Data</dt>
+          <dd>{{ formatDay(booking.date) }}</dd>
+        </div>
+        <div>
+          <dt><mat-icon>schedule</mat-icon> Horário</dt>
+          <dd>{{ booking.time }}</dd>
+        </div>
+        <div>
+          <dt><mat-icon>group</mat-icon> Mesa para</dt>
+          <dd>{{ guestsLabel(booking.guests) }} · {{ areaLabel(booking.area) }}</dd>
+        </div>
+        @if (booking.notes) {
+          <div>
+            <dt><mat-icon>edit_note</mat-icon> Observações</dt>
+            <dd>{{ booking.notes }}</dd>
+          </div>
+        }
+      </dl>
+
+      <div class="confirmation-actions">
+        <a mat-flat-button routerLink="/">
+          <mat-icon>restaurant_menu</mat-icon>
+          Ver o cardápio
+        </a>
+        <button mat-stroked-button (click)="newReservation()">Fazer outra reserva</button>
+      </div>
+    </div>
+  } @else {
+    <form class="form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <mat-icon matPrefix>person</mat-icon>
+        <input matInput formControlName="name" autocomplete="name" />
+        @if (form.controls.name.hasError('required')) {
+          <mat-error>Informe seu nome.</mat-error>
+        } @else if (form.controls.name.hasError('minlength')) {
+          <mat-error>O nome precisa ter pelo menos 3 letras.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Telefone</mat-label>
+        <mat-icon matPrefix>call</mat-icon>
+        <input
+          matInput
+          type="tel"
+          formControlName="phone"
+          autocomplete="tel"
+          placeholder="(11) 98765-4321"
+        />
+        @if (form.controls.phone.hasError('required')) {
+          <mat-error>Informe um telefone para contato.</mat-error>
+        } @else if (form.controls.phone.hasError('phone')) {
+          <mat-error>Use DDD + número, com 10 ou 11 dígitos.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Data</mat-label>
+        <input
+          matInput
+          formControlName="date"
+          placeholder="dd/mm/aaaa"
+          [matDatepicker]="picker"
+          [matDatepickerFilter]="dateFilter"
+          [min]="minDate"
+          [max]="maxDate"
+        />
+        <mat-datepicker-toggle matIconSuffix [for]="picker" />
+        <mat-datepicker #picker />
+        @if (form.controls.date.hasError('matDatepickerParse')) {
+          <mat-error>Data inválida. Use o formato dd/mm/aaaa.</mat-error>
+        } @else if (form.controls.date.hasError('required')) {
+          <mat-error>Escolha o dia da visita.</mat-error>
+        } @else if (
+          form.controls.date.hasError('matDatepickerMin') ||
+          form.controls.date.hasError('matDatepickerMax')
+        ) {
+          <mat-error>Reservas só de hoje até 30 dias à frente.</mat-error>
+        } @else if (form.controls.date.hasError('matDatepickerFilter')) {
+          <mat-error>Não há mais horários livres neste dia.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Horário</mat-label>
+        <mat-icon matPrefix>schedule</mat-icon>
+        <mat-select formControlName="time">
+          @for (time of times(); track time) {
+            <mat-option [value]="time">{{ time }}</mat-option>
+          }
+        </mat-select>
+        @if (times().length === 0) {
+          <mat-hint>Escolha uma data para ver os horários.</mat-hint>
+        }
+        <mat-error>Escolha um horário.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Pessoas</mat-label>
+        <mat-icon matPrefix>group</mat-icon>
+        <mat-select formControlName="guests">
+          @for (guests of guestOptions; track guests) {
+            <mat-option [value]="guests">{{ guestsLabel(guests) }}</mat-option>
+          }
+        </mat-select>
+        <mat-hint>Grupos maiores? Ligue para a padaria.</mat-hint>
+      </mat-form-field>
+
+      <div class="area-field">
+        <span class="area-label" id="area-label">Onde prefere sentar?</span>
+        <mat-button-toggle-group
+          formControlName="area"
+          aria-labelledby="area-label"
+          hideSingleSelectionIndicator
+        >
+          @for (area of areas; track area[0]) {
+            <mat-button-toggle [value]="area[0]">{{ area[1] }}</mat-button-toggle>
+          }
+        </mat-button-toggle-group>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Observações</mat-label>
+        <mat-icon matPrefix>edit_note</mat-icon>
+        <textarea
+          matInput
+          formControlName="notes"
+          rows="3"
+          [maxlength]="notesMaxLength"
+          placeholder="Aniversário, cadeirinha para bebê, acessibilidade…"
+        ></textarea>
+        <mat-hint align="end">{{ form.controls.notes.value.length }}/{{ notesMaxLength }}</mat-hint>
+      </mat-form-field>
+
+      <button mat-flat-button type="submit" class="submit-button full-width">
+        <mat-icon>event_available</mat-icon>
+        Confirmar reserva
+      </button>
+    </form>
+  }
+
+  @if (reservations.upcoming().length > 0) {
+    <h2 class="bookings-title">Minhas reservas</h2>
+    <ul class="bookings">
+      @for (booking of reservations.upcoming(); track booking.code + booking.date + booking.time) {
+        <li class="booking">
+          <span class="day" aria-hidden="true">
+            <strong>{{ dayNumber(booking.date) }}</strong>
+            <span>{{ monthShort(booking.date) }}</span>
+          </span>
+          <div class="info">
+            <span class="name">{{ formatDay(booking.date) }} · {{ booking.time }}</span>
+            <span class="variant">
+              {{ guestsLabel(booking.guests) }} · {{ areaLabel(booking.area) }} · nº
+              {{ booking.code }}
+            </span>
+          </div>
+          <button
+            mat-icon-button
+            class="cancel-button"
+            (click)="cancel(booking)"
+            [attr.aria-label]="'Cancelar reserva nº ' + booking.code"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </li>
+      }
+    </ul>
+  }
+</section>

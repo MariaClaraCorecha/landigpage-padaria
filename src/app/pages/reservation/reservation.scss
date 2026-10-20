@@ -1,0 +1,259 @@
+@use '@angular/material' as mat;
+
+:host {
+  display: block;
+
+  @include mat.button-overrides(
+    (
+      filled-container-color: var(--color-chocolate),
+      filled-label-text-color: var(--color-beige),
+      outlined-label-text-color: var(--color-chocolate),
+      outlined-outline-color: var(--color-gold),
+    )
+  );
+
+  @include mat.button-toggle-overrides(
+    (
+      shape: 999px,
+      divider-color: var(--color-gold),
+      text-color: var(--color-chocolate),
+      background-color: transparent,
+      selected-state-background-color: var(--color-chocolate),
+      selected-state-text-color: var(--color-beige),
+    )
+  );
+
+  @include mat.form-field-overrides(
+    (
+      outlined-outline-color: rgba(205, 163, 129, 0.6),
+      outlined-hover-outline-color: var(--color-gold),
+      outlined-focus-outline-color: var(--color-chocolate),
+      outlined-focus-label-text-color: var(--color-chocolate),
+      leading-icon-color: var(--color-gold),
+    )
+  );
+}
+
+.reservation {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  color: var(--color-chocolate);
+}
+
+.intro {
+  margin: 0 0 24px;
+  max-width: 60ch;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 16px;
+  row-gap: 4px;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.area-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  // Lines the toggle up with the outlined fields beside it.
+  margin-bottom: 22px;
+}
+
+.area-label {
+  font-size: 0.85rem;
+  color: var(--color-chocolate);
+}
+
+.submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.confirmation {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+
+  h2 {
+    margin: 8px 0 4px;
+    color: var(--color-chocolate);
+  }
+}
+
+.confirmation-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  color: var(--color-gold);
+}
+
+.confirmation-meta {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.details {
+  width: 100%;
+  margin: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(205, 163, 129, 0.3);
+  }
+
+  dt {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+
+    mat-icon {
+      color: var(--color-gold);
+    }
+  }
+
+  dd {
+    margin: 0;
+    text-align: right;
+    font-weight: 600;
+    color: var(--color-chocolate);
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.confirmation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.bookings-title {
+  margin-top: 40px;
+  color: var(--color-chocolate);
+}
+
+.bookings {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.booking {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow 0.25s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-soft-hover);
+  }
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--gradient-bar);
+  color: var(--color-gold-light);
+  line-height: 1.1;
+
+  strong {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+  }
+
+  span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.name {
+  font-weight: 600;
+  color: var(--color-chocolate);
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.variant {
+  font-size: 0.85rem;
+}
+
+.cancel-button {
+  color: var(--color-pink-text);
+  opacity: 0.6;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+
+  &:hover {
+    color: #ba1a1a;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .form {
+    grid-template-columns: 1fr;
+    padding: 20px 16px;
+  }
+}
