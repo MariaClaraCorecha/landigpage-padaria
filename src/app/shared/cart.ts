@@ -3,6 +3,13 @@ import { MenuItem } from './menu-item';
 
 export type PriceType = 'whole' | 'slice';
 
+export type Fulfillment = 'dine-in' | 'takeaway';
+
+export const FULFILLMENT_LABELS: Record<Fulfillment, string> = {
+  'dine-in': 'Comer no local',
+  takeaway: 'Levar para casa',
+};
+
 export interface CartLine {
   item: MenuItem;
   priceType: PriceType;
@@ -15,9 +22,12 @@ export interface OrderReceipt {
   date: Date;
   lines: CartLine[];
   total: number;
+  fulfillment: Fulfillment;
+  notes: string;
 }
 
 const STORAGE_KEY = 'padaria:cart';
+const FULFILLMENT_KEY = 'padaria:fulfillment';
 
 export function parseBrlPrice(price: string): number {
   const numeric = price.replace(/[^\d,]/g, '').replace(',', '.');
@@ -33,18 +43,30 @@ function loadLines(): CartLine[] {
   }
 }
 
+function loadFulfillment(): Fulfillment {
+  try {
+    return localStorage.getItem(FULFILLMENT_KEY) === 'dine-in' ? 'dine-in' : 'takeaway';
+  } catch {
+    return 'takeaway';
+  }
+}
+
 @Injectable({ providedIn: 'root' })
 export class Cart {
   private readonly lines = signal<CartLine[]>(loadLines());
 
+  readonly fulfillment = signal<Fulfillment>(loadFulfillment());
+
+  readonly notes = signal('');
+
   constructor() {
     effect(() => {
       const lines = this.lines();
+      const fulfillment = this.fulfillment();
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(lines));
-      } catch {
-        // Storage may be unavailable (private mode); the cart still works for this visit.
-      }
+        localStorage.setItem(FULFILLMENT_KEY, fulfillment);
+      } catch {}
     });
   }
 
@@ -98,8 +120,11 @@ export class Cart {
       date: new Date(),
       lines: this.lines(),
       total: this.total(),
+      fulfillment: this.fulfillment(),
+      notes: this.notes().trim(),
     };
     this.clear();
+    this.notes.set('');
     return receipt;
   }
 }

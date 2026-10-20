@@ -102,6 +102,28 @@ describe('Cart', () => {
     expect(cart.items()).toEqual([]);
   });
 
+  it('leva para casa por padrão e registra a forma de consumo e as observações no recibo', () => {
+    expect(cart.fulfillment()).toBe('takeaway');
+
+    cart.add(cafe, 'whole');
+    cart.fulfillment.set('dine-in');
+    cart.notes.set('  Café bem quente  ');
+    const receipt = cart.checkout();
+
+    expect(receipt.fulfillment).toBe('dine-in');
+    expect(receipt.notes).toBe('Café bem quente');
+    expect(cart.notes()).toBe('');
+  });
+
+  it('lembra a forma de consumo escolhida ao recarregar', () => {
+    cart.fulfillment.set('dine-in');
+    TestBed.tick();
+
+    TestBed.resetTestingModule();
+
+    expect(TestBed.inject(Cart).fulfillment()).toBe('dine-in');
+  });
+
   it('salva a cestinha no localStorage e restaura ao recarregar', () => {
     cart.add(bolo, 'slice');
     TestBed.tick();
