@@ -1,17 +1,31 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { Cart, CartLine, OrderReceipt } from '../../shared/cart';
+import { MatInputModule } from '@angular/material/input';
+import { Cart, CartLine, FULFILLMENT_LABELS, Fulfillment, OrderReceipt } from '../../shared/cart';
+
+const NOTES_MAX_LENGTH = 200;
 
 @Component({
   selector: 'app-profile',
-  imports: [RouterLink, MatButtonModule, MatIconModule],
+  imports: [
+    RouterLink,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+  ],
   templateUrl: './profile.html',
   styleUrl: './profile.scss',
 })
 export class Profile {
   protected readonly receipt = signal<OrderReceipt | null>(null);
+  protected readonly fulfillmentLabels = FULFILLMENT_LABELS;
+  protected readonly notesMaxLength = NOTES_MAX_LENGTH;
 
   constructor(protected readonly cart: Cart) {}
 
@@ -31,6 +45,14 @@ export class Profile {
 
   decrement(line: CartLine): void {
     this.cart.updateQuantity(line, line.quantity - 1);
+  }
+
+  setFulfillment(fulfillment: Fulfillment): void {
+    this.cart.fulfillment.set(fulfillment);
+  }
+
+  setNotes(event: Event): void {
+    this.cart.notes.set((event.target as HTMLTextAreaElement).value);
   }
 
   checkout(): void {

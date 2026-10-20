@@ -1,3 +1,37 @@
+@use '@angular/material' as mat;
+
+:host {
+  display: block;
+
+  @include mat.button-toggle-overrides(
+    (
+      shape: 999px,
+      divider-color: var(--color-gold),
+      text-color: var(--color-chocolate),
+      background-color: transparent,
+      selected-state-background-color: var(--color-chocolate),
+      selected-state-text-color: var(--color-beige),
+    )
+  );
+
+  @include mat.button-overrides(
+    (
+      outlined-label-text-color: var(--color-chocolate),
+      outlined-outline-color: var(--color-gold),
+    )
+  );
+
+  @include mat.form-field-overrides(
+    (
+      outlined-outline-color: rgba(205, 163, 129, 0.6),
+      outlined-hover-outline-color: var(--color-gold),
+      outlined-focus-outline-color: var(--color-chocolate),
+      outlined-focus-label-text-color: var(--color-chocolate),
+      leading-icon-color: var(--color-gold),
+    )
+  );
+}
+
 .profile {
   max-width: 900px;
   margin: 0 auto;
@@ -119,6 +153,65 @@ h1 {
   }
 }
 
+.options {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+
+  h2 {
+    margin: 0 0 12px;
+    font-size: 1.1rem;
+    color: var(--color-chocolate);
+  }
+}
+
+.fulfillment {
+  display: flex;
+
+  mat-button-toggle {
+    flex: 1;
+  }
+
+  mat-icon {
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+}
+
+.fulfillment-hint {
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+}
+
+.reserve-hint {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px dashed var(--color-gold);
+  background: var(--color-surface-soft);
+  font-size: 0.9rem;
+
+  mat-icon {
+    color: var(--color-gold);
+  }
+
+  span {
+    flex: 1;
+    min-width: 180px;
+  }
+}
+
+.notes {
+  width: 100%;
+  margin-top: 16px;
+}
+
 .total {
   display: flex;
   justify-content: space-between;
@@ -191,6 +284,30 @@ h1 {
   margin: 0;
   color: var(--color-pink-text);
   font-size: 0.9rem;
+}
+
+.receipt-fulfillment,
+.receipt-notes {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 0;
+  color: var(--color-chocolate);
+
+  mat-icon {
+    color: var(--color-gold);
+  }
+}
+
+.receipt-fulfillment {
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-gold);
+  font-weight: 600;
+}
+
+.receipt-notes {
+  font-style: italic;
 }
 
 .receipt-line {

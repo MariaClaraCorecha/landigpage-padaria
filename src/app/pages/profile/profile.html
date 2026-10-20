@@ -6,6 +6,10 @@
       <mat-icon class="receipt-icon">task_alt</mat-icon>
       <h2>Pedido confirmado!</h2>
       <p class="receipt-meta">Pedido nº {{ order.orderNumber }} · {{ formatDate(order.date) }}</p>
+      <p class="receipt-fulfillment">
+        <mat-icon>{{ order.fulfillment === 'dine-in' ? 'restaurant' : 'takeout_dining' }}</mat-icon>
+        {{ fulfillmentLabels[order.fulfillment] }}
+      </p>
 
       <ul class="lines">
         @for (line of order.lines; track line.item.name + line.priceType + (line.flavor ?? '')) {
@@ -22,6 +26,10 @@
           </li>
         }
       </ul>
+
+      @if (order.notes) {
+        <p class="receipt-notes"><mat-icon>edit_note</mat-icon> {{ order.notes }}</p>
+      }
 
       <div class="total">
         <span>Valor final</span>
@@ -68,6 +76,50 @@
         </li>
       }
     </ul>
+
+    <div class="options">
+      <h2>Como você quer receber?</h2>
+      <mat-button-toggle-group
+        class="fulfillment"
+        aria-label="Forma de consumo"
+        hideSingleSelectionIndicator
+        [value]="cart.fulfillment()"
+        (change)="setFulfillment($event.value)"
+      >
+        <mat-button-toggle value="takeaway">
+          <mat-icon>takeout_dining</mat-icon>
+          {{ fulfillmentLabels.takeaway }}
+        </mat-button-toggle>
+        <mat-button-toggle value="dine-in">
+          <mat-icon>restaurant</mat-icon>
+          {{ fulfillmentLabels['dine-in'] }}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+
+      @if (cart.fulfillment() === 'dine-in') {
+        <div class="reserve-hint">
+          <mat-icon>table_restaurant</mat-icon>
+          <span>Vai com mais gente? Garanta sua mesa antes de chegar.</span>
+          <a mat-stroked-button routerLink="/reservas">Reservar mesa</a>
+        </div>
+      } @else {
+        <p class="fulfillment-hint">Embalamos tudo para viagem. É só retirar no balcão.</p>
+      }
+
+      <mat-form-field appearance="outline" class="notes" subscriptSizing="dynamic">
+        <mat-label>Observações do pedido</mat-label>
+        <mat-icon matPrefix>edit_note</mat-icon>
+        <textarea
+          matInput
+          rows="2"
+          [attr.maxlength]="notesMaxLength"
+          [value]="cart.notes()"
+          (input)="setNotes($event)"
+          placeholder="Ex.: pão bem assado, café sem açúcar…"
+        ></textarea>
+        <mat-hint align="end">{{ cart.notes().length }}/{{ notesMaxLength }}</mat-hint>
+      </mat-form-field>
+    </div>
 
     <div class="total">
       <span>Valor final</span>
