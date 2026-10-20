@@ -76,10 +76,30 @@ export function availableTimes(date: Date, now = new Date()): string[] {
   return times;
 }
 
+// Entries saved by older versions (or edited by hand) must not break the page.
+function isReservation(value: unknown): value is Reservation {
+  if (typeof value !== 'object' || value === null) return false;
+  const r = value as Record<string, unknown>;
+  return (
+    typeof r['code'] === 'string' &&
+    typeof r['name'] === 'string' &&
+    typeof r['phone'] === 'string' &&
+    typeof r['date'] === 'string' &&
+    /^\d{4}-\d{2}-\d{2}$/.test(r['date']) &&
+    typeof r['time'] === 'string' &&
+    /^\d{2}:\d{2}$/.test(r['time']) &&
+    typeof r['guests'] === 'number' &&
+    typeof r['area'] === 'string' &&
+    r['area'] in SEATING_AREA_LABELS
+  );
+}
+
 function loadReservations(): Reservation[] {
   try {
     const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
-    return Array.isArray(stored) ? stored : [];
+    return Array.isArray(stored)
+      ? stored.filter(isReservation).map((r) => ({ ...r, notes: r.notes ?? '' }))
+      : [];
   } catch {
     return [];
   }

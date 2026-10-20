@@ -62,7 +62,8 @@ html {
 body {
   // color-scheme is set on :root by the Theme service so Material's light-dark() tokens follow it.
   background:
-    radial-gradient(1100px 520px at 50% -8%, var(--color-glow), transparent 60%), var(--color-beige);
+    radial-gradient(1100px 520px at 50% -8%, var(--color-glow), transparent 60%) no-repeat,
+    var(--color-beige);
   color: var(--color-pink-text);
   font: var(--mat-sys-body-medium);
   line-height: 1.6;

@@ -120,4 +120,17 @@ describe('Reservations', () => {
     expect(reloaded.upcoming()).toHaveLength(1);
     expect(reloaded.upcoming()[0].name).toBe('Ana Souza');
   });
+
+  it('ignora reservas salvas com formato inválido', () => {
+    const valid = { ...request(), date: '2099-01-05', code: '1234' };
+    localStorage.setItem(
+      'padaria:reservations',
+      JSON.stringify([null, { name: 'x' }, { ...valid, date: 5 }, valid]),
+    );
+
+    TestBed.resetTestingModule();
+    const reloaded = TestBed.inject(Reservations);
+
+    expect(reloaded.upcoming()).toEqual([valid]);
+  });
 });

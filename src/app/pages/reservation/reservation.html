@@ -77,7 +77,6 @@
           matInput
           formControlName="date"
           placeholder="dd/mm/aaaa"
-          (click)="picker.open()"
           [matDatepicker]="picker"
           [matDatepickerFilter]="dateFilter"
           [min]="minDate"
@@ -110,7 +109,7 @@
           }
         </mat-select>
         @if (times().length === 0) {
-          <mat-hint>Escolha uma data para ver os horários.</mat-hint>
+          <mat-hint>Escolha a data primeiro.</mat-hint>
         }
         <mat-error>Escolha um horário.</mat-error>
       </mat-form-field>
@@ -123,7 +122,7 @@
             <mat-option [value]="guests">{{ guestsLabel(guests) }}</mat-option>
           }
         </mat-select>
-        <mat-hint>Grupos maiores? Ligue para a padaria.</mat-hint>
+        <mat-hint>Mais de 10 pessoas? Ligue.</mat-hint>
       </mat-form-field>
 
       <div class="area-field">
